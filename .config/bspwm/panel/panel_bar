@@ -1,0 +1,73 @@
+#!/bin/sh
+
+source $(dirname $0)/config
+
+num_mon=$(bspc query -M | wc -l)
+
+while read -r line ; do
+    case $line in
+        S*)
+            # clock output
+            sys_info=""
+            sys_info="${sys_info}%{S0}%{F$COLOR_FOREGROUND}%{B$COLOR_BACKGROUND} ${line#?} %{B-}%{F-}"
+            sys_info="${sys_info}%{S1}%{F$COLOR_FOREGROUND}%{B$COLOR_BACKGROUND} ${line#?} %{B-}%{F-}"
+            ;;
+        T*)
+            # xtitle output
+            title=""
+            title="${title}%{S0}%{F$COLOR_FOREGROUND}%{B$COLOR_BACKGROUND} ${line#?} %{B-}%{F-}"
+            title="${title}%{S1}%{F$COLOR_FOREGROUND}%{B$COLOR_BACKGROUND} ${line#?} %{B-}%{F-}"
+            ;;
+        W*)
+            # bspwm internal state
+            wm_info=""
+            IFS=':'
+            set -- ${line#?}
+            while [ $# -gt 0 ] ; do
+                item=$1
+                name=${item#?}
+                case $item in
+                    [Mm]*)
+                        case ${name} in
+                            DVI-D-0*)
+                                wm_info="${wm_info}%{S0}%{F$COLOR_MONITOR_FOCUSED_FOREGROUND}%{B$COLOR_MONITOR_FOCUSED_BACKGROUND} ${name} %{B-}%{F-}"
+                                ;;
+                            DVI-I-1*)
+                                wm_info="${wm_info}%{S1}%{F$COLOR_MONITOR_FOCUSED_FOREGROUND}%{B$COLOR_MONITOR_FOCUSED_BACKGROUND} ${name} %{B-}%{F-}"
+                                ;;
+                        esac
+                        ;;
+                    O*)
+                        # Occupied focused desktop
+                        wm_info="${wm_info}%{F$COLOR_OCCUPIED_FOCUSED_FOREGROUND}%{B$COLOR_OCCUPIED_FOCUSED_BACKGROUND}%{U$COLOR_OCCUPIED_FOCUSED_FOREGROUND}%{+u} ${name} %{-u}%{B-}%{F-}"
+                        ;;
+                    o*)
+                        # Occupied unfocused desktop
+                        wm_info="${wm_info}%{F$COLOR_OCCUPIED_UNFOCUSED_FOREGROUND}%{B$COLOR_OCCUPIED_UNFOCUSED_BACKGROUND} ${name} %{B-}%{F-}"
+                        ;;
+                    F*)
+                        # Free focused desktop
+                        wm_info="${wm_info}%{F$COLOR_FREE_FOCUSED_FOREGROUND}%{B$COLOR_FREE_FOCUSED_BACKGROUND}%{U$COLOR_FREE_FOCUSED_FOREGROUND}%{+u} ${name} %{-u}%{B-}%{F-}"
+                        ;;
+                    f*)
+                        # Free unfocused desktop
+                        wm_info="${wm_info}%{F$COLOR_FREE_UNFOCUSED_FOREGROUND}%{B$COLOR_FREE_UNFOCUSED_BACKGROUND} ${name} %{B-}%{F-}"
+                        ;;
+                    U*)
+                        # Urgent focused desktop
+                        wm_info="${wm_info}%{F$COLOR_URGENT_FOCUSED_FOREGROUND}%{B$COLOR_URGENT_FOCUSED_BACKGROUND}%{U$COLOR_URGENT_FOCUSED_FOREGROUND}%{+u} ${name} %{-u}%{B-}%{F-}"
+                        ;;
+                    u*)
+                        # Urgent unfocused desktop
+                        wm_info="${wm_info}%{F$COLOR_URGENT_UNFOCUSED_FOREGROUND}%{B$COLOR_URGENT_UNFOCUSED_BACKGROUND} ${name} %{B-}%{F-}"
+                        ;;
+                    L*)
+                        wm_info="${wm_info}%{F$COLOR_LAYOUT_FOREGROUND}%{B$COLOR_LAYOUT_BACKGROUND} ${name} %{B-}%{F-}"
+                        ;;
+                esac
+                shift
+            done
+            ;;
+    esac
+    printf "%s\n" "%{l}${wm_info}%{c}${title}%{r}${sys_info}"
+done
