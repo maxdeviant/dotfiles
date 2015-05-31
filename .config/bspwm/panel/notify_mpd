@@ -41,9 +41,9 @@ case $1 in
     '-t'|'--toggle')
         mpc toggle
         if [[ `state` == 'paused' ]] ; then
-            icon='[Pause]'
+            icon='[Paused]'
         elif [[ `state` == 'playing' ]] ; then
-            icon='[Play]'
+            icon='[Playing]'
         fi
         ;;
     '-d'|'--daemon')
