@@ -31,6 +31,8 @@ bindkey -v
 conf() {
     case $1 in
         bspwm)          vim ~/.config/bspwm/bspwmrc ;;
+        nginx)          sudo vim /etc/nginx/nginx.conf ;;
+        sshd)           sudo vim /etc/ssh/sshd_config ;;
         sxhkd)          vim ~/.config/sxhkd/sxhkdrc ;;
         vim)            vim ~/.vimrc ;;
         zsh)            vim ~/.zshrc && source ~/.zshrc ;;
