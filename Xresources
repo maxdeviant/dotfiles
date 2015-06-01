@@ -1,0 +1,25 @@
+#include "/home/maxdeviant/.colors/s3r0"
+
+Xcursor.theme: Neutral
+Xcursor.size: 16
+
+! urxvt
+urxvt*scrollBar: false
+urxvt*depth: 32
+urxvt*dynamicColors: on
+
+! Fonts
+urxvt*font: -windows-dina-medium-r-normal--10-80-96-96-c-70-iso8859-1
+
+!urxvt*font: -gbdfed-creep-regular-r-normal--16-120-96-96-m-4-iso10646-1
+!urxvt*boldFont: -gbdfed-creep-regular-r-normal--16-120-96-96-m-4-iso10646-1
+!urxvt*italicFont: -gbdfed-creep-regular-r-normal--16-120-96-96-m-4-iso10646-1
+!urxvt*bolditalicFont: -gbdfed-creep-regular-r-normal--16-120-96-96-m-4-iso10646-1
+
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb

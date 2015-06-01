@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "ABCDEFGHIJKLMNOPQRSTUVWXYZ 12345"
+echo "abcdefghijklmnopqrstuvwxyz 67890"
+echo "{}[]()<>\$*-+=/#+%^@\&|~?'\" !,.;:"

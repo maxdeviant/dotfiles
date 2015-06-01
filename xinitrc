@@ -1,0 +1,13 @@
+xrdb ~/.Xresources
+xset +fp /usr/share/fonts/TTF
+xset +fp /usr/share/fonts/misc
+xset +fp /usr/share/fonts/jmk
+xset fp rehash
+
+xrandr --output DVI-I-1 --mode 1920x1080 --output DVI-D-0 --mode 1600x900 --left-of DVI-I-1
+
+feh --bg-scale ~/pictures/backgrounds/U4kyQ31.jpg
+compton &
+
+sxhkd &
+exec bspwm
