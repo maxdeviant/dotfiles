@@ -9,7 +9,7 @@ After=remote-fs.target
 After=sound.target
 
 [Service]
-ExecStart=/usr/bin/mopidy --config $HOME/.config/mopidy/mopidy.conf
+ExecStart=/usr/bin/mopidy --config ${HOME}/.config/mopidy/mopidy.conf
 
 [Install]
 WantedBy=multi-user.target
