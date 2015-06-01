@@ -41,8 +41,8 @@ super + m
 super + {_,shift + }{h,j,k,l}
     bspc window -{f,s} {left,down,up,right}
 
-super + {_,shift + }c
-    bspc window -f {next,prev}
+#super + {_,shift + }c
+    #bspc window -f {next,prev}
 
 super + {comma,period}
     bspc desktop -C {backward,forward}

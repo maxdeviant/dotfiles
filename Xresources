@@ -8,6 +8,13 @@ urxvt*scrollBar: false
 urxvt*depth: 32
 urxvt*dynamicColors: on
 
+! urvxt-perls
+urxvt.perl-ext-common: clipboard
+urxvt.keysym.Mod4-c: perl:clipboard:copy
+urxvt.keysym.Mod4-v: perl:clipboard:paste
+urxvt.clipboard.copycmd: xsel -ib
+urxvt.clipboard.pastcmd: xsel -ob
+
 ! Fonts
 urxvt*font: -windows-dina-medium-r-normal--10-80-96-96-c-70-iso8859-1
 
