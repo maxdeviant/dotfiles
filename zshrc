@@ -30,11 +30,12 @@ bindkey -v
 
 conf() {
     case $1 in
-        bspwm)      vim ~/.config/bspwm/bspwmrc ;;
-        sxhkd)      vim ~/.config/sxhkd/sxhkdrc ;;
-        vim)        vim ~/.vimrc ;;
-        zsh)        vim ~/.zshrc && source ~/.zshrc ;;
-        *)          echo "Unknown application: $1" ;;
+        bspwm)          vim ~/.config/bspwm/bspwmrc ;;
+        sxhkd)          vim ~/.config/sxhkd/sxhkdrc ;;
+        vim)            vim ~/.vimrc ;;
+        zsh)            vim ~/.zshrc && source ~/.zshrc ;;
+        Xresources)     vim ~/.Xresources && xrdb ~/.Xresources ;; 
+        *)              echo "Unknown application: $1" ;;
     esac
 }
 
