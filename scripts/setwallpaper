@@ -1,0 +1,5 @@
+#!/bin/sh
+
+feh --bg-scale $1
+
+echo "Wallpaper set to: `readlink -f $1`"
