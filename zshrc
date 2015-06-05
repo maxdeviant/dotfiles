@@ -63,5 +63,9 @@ done
 
 export EDITOR='vim'
 
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # nvm
 source /usr/share/nvm/init-nvm.sh
