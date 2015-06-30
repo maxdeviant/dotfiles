@@ -1,3 +1,5 @@
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 autoload -U compinit promptinit colors
 compinit
 promptinit
@@ -6,6 +8,23 @@ colors
 PROMPT="
 %{$fg[red]%} »  %{$reset_color%}"
 RPROMPT="%{$fg[red]%}%~%{$reset_color%}"
+
+setopt AUTO_CD
+setopt CORRECT
+setopt completealiases
+setopt append_history
+setopt share_history
+setopt hist_verify
+setopt hist_ignore_all_dups
+export HISTFILE="${HOME}"/.zsh-history
+export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors 'reply=( "=(#b)(*$VAR)(?)*=00=$color[green]=$color[bg-green]" )'
+zstyle ':completion:*:*:*:*:hosts' list-colors '=*=30;41'
+zstyle ':completion:*:*:*:*:users' list-colors '=*=$color[green]=$color[red]'
+zstyle ':completion:*' menu select
 
 conf() {
     case $1 in
