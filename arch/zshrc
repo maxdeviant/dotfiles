@@ -36,7 +36,7 @@ conf() {
         sxhkd)          vim ~/.config/sxhkd/sxhkdrc ;;
         vim)            vim ~/.vimrc ;;
         zsh)            vim ~/.zshrc && source ~/.zshrc ;;
-        Xresources)     vim ~/.Xresources && xrdb ~/.Xresources ;; 
+        Xresources)     vim ~/.Xresources && xrdb ~/.Xresources ;;
         *)              echo "Unknown application: $1" ;;
     esac
 }
