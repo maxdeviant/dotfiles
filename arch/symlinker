@@ -7,10 +7,10 @@ fi
 
 DOTS="vimrc xinitrc Xresources zprofile zshrc"
 
-DIR=~/dotfiles
-CONFDIR=~/dotfiles/config
-COLORSDIR=~/dotfiles/colors
-SCRIPTSDIR=~/dotfiles/scripts
+DIR=~/dotfiles/arch
+CONFDIR=~/dotfiles/arch/config
+COLORSDIR=~/dotfiles/arch/colors
+SCRIPTSDIR=~/dotfiles/arch/scripts
 
 DEST_DIR=~/
 DEST_CONFDIR=~/.config
