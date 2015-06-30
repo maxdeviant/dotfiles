@@ -34,6 +34,9 @@ conf() {
     esac
 }
 
+# Sublime Text
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
 # tar
 alias tarzip='unzip'
 alias tarx='tar -xvf'
