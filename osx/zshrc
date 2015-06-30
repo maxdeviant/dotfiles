@@ -1,0 +1,26 @@
+autoload -U compinit promptinit colors
+compinit
+promptinit
+colors
+
+PROMPT="
+%{$fg[red]%} »  %{$reset_color%}"
+RPROMPT="%{$fg[red]%}%~%{$reset_color%}"
+
+conf() {
+    case $1 in
+        vim)            vim ~/.vimrc ;;
+        zsh)            vim ~/.zshrc && source ~/.zshrc ;;
+        *)              echo "Unknown application: $1" ;;
+    esac
+}
+
+# tar
+alias tarzip='unzip'
+alias tarx='tar -xvf'
+alias targz='tar -zxvf'
+alias tarbz2='tar -jxvf'
+
+# nvm
+export NVM_DIR="/Users/maxdeviant/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
