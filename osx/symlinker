@@ -1,25 +1,25 @@
 #!/bin/sh
 
-if [ `uname -s` != "Darwin" ]; then
-    echo "This doesn't look like OS X: `uname -s`"
+if [ "$(uname -s)" != "Darwin" ]; then
+    echo "This doesn't look like OS X: $(uname -s)"
     exit 1
 fi
 
 DOTS="zshrc"
 
 DIR=~/dotfiles/osx
-CONFDIR=~/dotfiles/osx/config
-COLORSDIR=~/dotfiles/osx/colors
-SCRIPTSDIR=~/dotfiles/osx/scripts
+CONFIG_DIR=~/dotfiles/osx/config
+COLORS_DIR=~/dotfiles/osx/colors
+SCRIPTS_DIR=~/dotfiles/osx/scripts
 
 DEST_DIR=~/
-DEST_CONFDIR=~/.config
-DEST_COLORSDIR=~/.colors
-DEST_SCRIPTSDIR=~/.scripts
+DEST_CONFIG_DIR=~/.config
+DEST_COLORS_DIR=~/.colors
+DEST_SCRIPTS_DIR=~/.scripts
 
 echo "Initializing dotfiles:"
 
-cd $DIR
+cd $DIR || exit
 
 echo "=> creating directories"
 
@@ -27,56 +27,56 @@ if [ ! -d $DEST_DIR ]; then
     mkdir -p $DEST_DIR
 fi
 
-if [ ! -d $DEST_CONFDIR ]; then
-    mkdir -p $DEST_CONFDIR
+if [ ! -d $DEST_CONFIG_DIR ]; then
+    mkdir -p $DEST_CONFIG_DIR
 fi
 
-if [ ! -d $DEST_COLORSDIR ]; then
-    mkdir -p $DEST_COLORSDIR
+if [ ! -d $DEST_COLORS_DIR ]; then
+    mkdir -p $DEST_COLORS_DIR
 fi
 
-if [ ! -d $DEST_SCRIPTSDIR ]; then
-    mkdir -p $DEST_SCRIPTSDIR
+if [ ! -d $DEST_SCRIPTS_DIR ]; then
+    mkdir -p $DEST_SCRIPTS_DIR
 fi
 
 echo "=> symlinking dotfiles"
 
 for file in $DOTS; do
-    if [ -z $DEST_DIR/.$file ] || [ -d $DEST_DIR/.$file ]; then
-        rm -rf $DEST_DIR/.$file
+    if [ -e "$DEST_DIR/.$file" ] || [ -d "$DEST_DIR/.$file" ]; then
+        rm -rf "$DEST_DIR/.$file"
     fi
 
-    ln -sf $DIR/$file $DEST_DIR/.$file
+    ln -sf "$DIR/$file $DEST_DIR/.$file"
 done
 
 echo "=> symlinking configs"
 
-for file in `ls $CONFDIR | xargs`; do
-    if [ -z $DEST_CONFDIR/$file ] || [ -d $DEST_CONFDIR/$file ]; then
-        rm -rf $DEST_CONFDIR/$file
+for file in $(ls $CONFIG_DIR | xargs); do
+    if [ -e "$DEST_CONFIG_DIR/$file" ] || [ -d "$DEST_CONFIG_DIR/$file" ]; then
+        rm -rf "${$DEST_CONFIG_DIR/$file:?}"
     fi
 
-    ln -sf $CONFDIR/$file $DEST_CONFDIR/$file
+    ln -sf "$CONFIG_DIR/$file $DEST_CONFIG_DIR/$file"
 done
 
 echo "=> symlinking colors"
 
-for file in `ls $COLORSDIR | xargs`; do
-    if [ -z $DEST_COLORSDIR/$file ] || [ -d $DEST_COLORSDIR/$file ]; then
-        rm -rf $DEST_COLORSDIR/$file
+for file in $(ls $COLORS_DIR | xargs); do
+    if [ -e "$DEST_COLORS_DIR/$file" ] || [ -d "$DEST_COLORS_DIR/$file" ]; then
+        rm -rf "${$DEST_COLORS_DIR/$file:?}"
     fi
 
-    ln -sf $COLORSDIR/$file $DEST_COLORSDIR/$file
+    ln -sf "$COLORS_DIR/$file $DEST_COLORS_DIR/$file"
 done
 
 echo "=> symlinking scripts"
 
-for file in `ls $SCRIPTSDIR | xargs`; do
-    if [ -z $DEST_SCRIPTSDIR/$file ] || [ -d $DEST_SCRIPTSDIR/$file ]; then
-        rm -rf $DEST_SCRIPTSDIR/$file
+for file in $(ls $SCRIPTS_DIR | xargs); do
+    if [ -e "$DEST_SCRIPTS_DIR/$file" ] || [ -d "$DEST_SCRIPTS_DIR/$file" ]; then
+        rm -rf "${$DEST_SCRIPTS_DIR/$file:?}"
     fi
 
-    ln -sf $SCRIPTSDIR/$file $DEST_SCRIPTSDIR/$file
+    ln -sf "$SCRIPTS_DIR/$file $DEST_SCRIPTS_DIR/$file"
 done
 
 echo "=> done"
