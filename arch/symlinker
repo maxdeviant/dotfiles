@@ -11,11 +11,13 @@ DIR=~/dotfiles/arch
 CONFDIR=~/dotfiles/arch/config
 COLORSDIR=~/dotfiles/arch/colors
 SCRIPTSDIR=~/dotfiles/arch/scripts
+NCMPCPPDIR=~/dotfiles/arch/ncmpcpp
 
 DEST_DIR=~/
 DEST_CONFDIR=~/.config
 DEST_COLORSDIR=~/.colors
 DEST_SCRIPTSDIR=~/.scripts
+DEST_NCMPCPPDIR=~/.ncmpcpp
 
 echo "Initializing dotfiles:"
 
@@ -37,6 +39,10 @@ fi
 
 if [ ! -d $DEST_SCRIPTSDIR ]; then
     mkdir -p $DEST_SCRIPTSDIR
+fi
+
+if [ ! -d $DEST_NCMPCPPDIR ]; then
+    mkdir -p $DEST_NCMPCPPDIR
 fi
 
 echo "=> symlinking dotfiles"
@@ -77,6 +83,16 @@ for file in `ls $SCRIPTSDIR | xargs`; do
     fi
 
     ln -sf $SCRIPTSDIR/$file $DEST_SCRIPTSDIR/$file
+done
+
+echo "=> symlinking ncmpcpp"
+
+for file in `ls $NCMPCPPDIR | xargs`; do
+    if [ -z $DEST_NCMPCPPDIR/$file ] || [ -d $DEST_NCMPCPPDIR/$file ]; then
+        rm -rf $DEST_NCMPCPPDIR/$file
+    fi
+
+    ln -sf $NCMPCPPDIR/$file $DEST_NCMPCPPDIR/$file
 done
 
 echo "=> done"
