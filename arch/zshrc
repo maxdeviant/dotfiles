@@ -64,9 +64,6 @@ done
 
 export EDITOR='vim'
 
-# bspwm
-export PANEL_FIFO="/tmp/panel-fifo"
-
 # Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
