@@ -6,7 +6,7 @@ xset fp rehash
 
 xrandr --output DVI-I-1 --mode 1920x1080 --output DVI-D-0 --mode 1600x900 --left-of DVI-I-1
 
-feh --bg-scale ~/pictures/backgrounds/U4kyQ31.jpg
+feh --bg-scale ~/pictures/backgrounds/6Dajgp5.jpg
 compton &
 
 sxhkd &
