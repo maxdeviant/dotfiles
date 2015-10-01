@@ -96,13 +96,13 @@ super + space
 #
 
 XF86AudioRaiseVolume
-    # raise
+    $HOME/.config/bspwm/panel/notify_volume + 3
 
 XF86AudioLowerVolume
-    # lower
+    $HOME/.config/bspwm/panel/notify_volume - 3
 
 XF86AudioMute
-    # mute
+    $HOME/.config/bspwm/panel/notify_volume !
 
 XF86AudioPlay
     $HOME/.config/bspwm/panel/notify_mpd -t
