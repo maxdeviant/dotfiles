@@ -48,7 +48,7 @@ fi
 echo "=> symlinking dotfiles"
 
 for file in $DOTS; do
-    if [ -z "$DEST_DIR/.$file" ] || [ -d "$DEST_DIR/.$file" ]; then
+    if [ -e "$DEST_DIR/.$file" ] || [ -d "$DEST_DIR/.$file" ]; then
         rm -rf "$DEST_DIR/.$file"
     fi
 
@@ -58,7 +58,7 @@ done
 echo "=> symlinking configs"
 
 for file in $(ls $CONFIG_DIR | xargs); do
-    if [ -z "$DEST_CONFIG_DIR/$file" ] || [ -d "$DEST_CONFIG_DIR/$file" ]; then
+    if [ -e "$DEST_CONFIG_DIR/$file" ] || [ -d "$DEST_CONFIG_DIR/$file" ]; then
         rm -rf "${$DEST_CONFIG_DIR/$file:?}"
     fi
 
@@ -68,7 +68,7 @@ done
 echo "=> symlinking colors"
 
 for file in $(ls $COLORS_DIR | xargs); do
-    if [ -z "$DEST_COLORS_DIR/$file" ] || [ -d "$DEST_COLORS_DIR/$file" ]; then
+    if [ -e "$DEST_COLORS_DIR/$file" ] || [ -d "$DEST_COLORS_DIR/$file" ]; then
         rm -rf "${$DEST_COLORS_DIR/$file:?}"
     fi
 
@@ -78,7 +78,7 @@ done
 echo "=> symlinking scripts"
 
 for file in $(ls $SCRIPTS_DIR | xargs); do
-    if [ -z "$DEST_SCRIPTS_DIR/$file" ] || [ -d "$DEST_SCRIPTS_DIR/$file" ]; then
+    if [ -e "$DEST_SCRIPTS_DIR/$file" ] || [ -d "$DEST_SCRIPTS_DIR/$file" ]; then
         rm -rf "${$DEST_SCRIPTS_DIR/$file:?}"
     fi
 
@@ -88,7 +88,7 @@ done
 echo "=> symlinking ncmpcpp"
 
 for file in $(ls $NCMPCPP_DIR | xargs); do
-    if [ -z "$DEST_NCMPCPP_DIR/$file" ] || [ -d "$DEST_NCMPCPP_DIR/$file" ]; then
+    if [ -e "$DEST_NCMPCPP_DIR/$file" ] || [ -d "$DEST_NCMPCPP_DIR/$file" ]; then
         rm -rf "${$DEST_NCMPCPP_DIR/$file:?}"
     fi
 
