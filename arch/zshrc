@@ -52,6 +52,7 @@ alias tarbz2='tar -jxvf'
 
 # scripts
 pathdirs=(
+    ~/.config/bspwm/panel
     ~/.scripts
 )
 
@@ -63,9 +64,13 @@ done
 
 export EDITOR='vim'
 
+# bspwm
+export PANEL_FIFO="/tmp/panel-fifo"
+
 # Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # nvm
-source /usr/share/nvm/init-nvm.sh
+export NVM_DIR="/home/maxdeviant/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
