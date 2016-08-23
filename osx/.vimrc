@@ -1,0 +1,1 @@
+/Users/maxdeviant/dotfiles/osx/vimrc /Users/maxdeviant//.vimrc
