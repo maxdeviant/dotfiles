@@ -1,7 +1,7 @@
 #!/bin/sh
 
-$EMAIL_ADDRESS = "me@example.com"
-$FULL_NAME = "John Smith"
+EMAIL_ADDRESS="me@example.com"
+FULL_NAME="John Smith"
 
 # Install software-properties-common
 sudo apt install -y software-properties-common
@@ -24,7 +24,7 @@ sudo apt install -y git
 
 # Configure git
 git config --global user.email $EMAIL_ADDRESS
-git config --global user.name $FULL_NAME
+git config --global user.name "$FULL_NAME"
 
 ssh-keygen -t rsa -b 8192 -C $EMAIL_ADDRESS
 xclip -sel clip < ~/.ssh/github_rsa.pub
