@@ -63,6 +63,12 @@
 
     google-chrome
     tdesktop
+
+    # Haskell
+    stack
+
+    # Rust
+    rustup
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
