@@ -1,0 +1,13 @@
+#!/bin/sh
+
+ln -i -s $(pwd)/Xresources ~/.Xresources
+
+mkdir -p ~/.config/bspwm
+ln -i -s $(pwd)/config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
+
+mkdir -p ~/.config/polybar
+ln -i -s $(pwd)/config/polybar/config ~/.config/polybar/config
+ln -i -s $(pwd)/config/polybar/launch ~/.config/polybar/launch
+
+mkdir -p ~/.config/sxhkd
+ln -i -s $(pwd)/config/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
