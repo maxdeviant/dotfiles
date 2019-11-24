@@ -1,0 +1,35 @@
+#
+# WM independent hotkeys
+#
+
+# Spawn terminal.
+super + Return
+    urxvt
+
+# Open program launcher.
+super + space
+    dmenu_run
+
+# Make sxhkd reload its configuration files.
+super + Escape
+    pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# Quit bspwm.
+super + alt + Escape
+    bspc quit
+
+# Close node.
+super + w
+    bspc node -c
+
+# Change node state.
+super + {t,shift + t,s,f}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Choose the direction in which to spawn a node.
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
