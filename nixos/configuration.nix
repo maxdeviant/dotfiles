@@ -51,18 +51,24 @@
     bspwm
     sxhkd
     dmenu
+    polybar
 
     # Applications
+    feh
     git
+    neofetch
     neovim
+    psmisc
     rxvt_unicode
-    screenfetch
     scrot
     xclip
     wget
 
     google-chrome
     tdesktop
+
+    # Build dependencies
+    gcc
 
     # Haskell
     stack
@@ -114,11 +120,15 @@
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
+  programs.fish.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.maxdeviant = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
+
+  users.defaultUserShell = "/run/current-system/sw/bin/fish";
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
