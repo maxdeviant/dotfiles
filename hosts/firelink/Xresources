@@ -1,0 +1,9 @@
+#include "/home/maxdeviant/.colors/s3r0"
+
+! urxvt
+urxvt*scrollBar: false
+urxvt*depth: 32
+urxvt*dynamicColors: on
+
+! Fonts
+urxvt*font: xft:fira code retina:size=16
