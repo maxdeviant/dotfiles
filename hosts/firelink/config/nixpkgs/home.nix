@@ -3,6 +3,18 @@
 {
   programs.home-manager.enable = true;
 
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      gs = "git status";
+      gc = "git commit $argv";
+      gca = "git add -A; and git commit $argv";
+      gd = "git diff $argv";
+      gl = "git log $argv";
+      gp = "git pull $argv";
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "Marshall Bowers";
