@@ -9,6 +9,10 @@
     userEmail = "elliott.codes@gmail.com";
   };
 
+  home.packages = with pkgs; [
+    discord
+  ];
+
   programs.neovim = {
     enable = true;
     viAlias = true;
