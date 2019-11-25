@@ -6,4 +6,4 @@ urxvt*depth: 32
 urxvt*dynamicColors: on
 
 ! Fonts
-urxvt*font: xft:fira code retina:size=16
+urxvt*font: xft:fira code retina:size=12
