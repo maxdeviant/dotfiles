@@ -56,6 +56,7 @@
     # Applications
     feh
     git
+    htop
     neofetch
     neovim
     psmisc
