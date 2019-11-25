@@ -2,6 +2,9 @@
 
 ln -i -s $(pwd)/Xresources ~/.Xresources
 
+mkdir -p ~/.config/nixpkgs
+ln -i -s $(pwd)/config/nixpkgs/home.nix ~/.config/nixpkgs/home.nix
+
 mkdir -p ~/.config/bspwm
 ln -i -s $(pwd)/config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 
