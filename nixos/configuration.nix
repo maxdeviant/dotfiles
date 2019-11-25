@@ -52,6 +52,7 @@
     sxhkd
     dmenu
     polybar
+    xorg.xdpyinfo
 
     # Applications
     feh
