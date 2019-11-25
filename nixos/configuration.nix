@@ -110,6 +110,8 @@
   # Enable touchpad support.
   # services.xserver.libinput.enable = true;
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+
   # Enable bspwm
   services.xserver.windowManager.bspwm.enable = true;
   services.xserver.windowManager.default = "bspwm";
