@@ -12,6 +12,7 @@
       gd = "git diff $argv";
       gl = "git log $argv";
       gp = "git pull $argv";
+      goops = "git add -A; and git reset --hard HEAD";
     };
   };
 
