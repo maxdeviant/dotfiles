@@ -14,6 +14,15 @@
       gp = "git pull";
       goops = "git add -A; and git reset --hard HEAD";
     };
+    shellInit = ''
+      function gll
+        git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
+      end
+
+      function glll
+        git log --graph --stat --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
+      end
+    '';
   };
 
   programs.git = {
