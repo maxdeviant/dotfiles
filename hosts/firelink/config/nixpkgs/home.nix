@@ -7,11 +7,11 @@
     enable = true;
     shellAliases = {
       gs = "git status";
-      gc = "git commit $argv";
-      gca = "git add -A; and git commit $argv";
-      gd = "git diff $argv";
-      gl = "git log $argv";
-      gp = "git pull $argv";
+      gc = "git commit";
+      gca = "git add -A; and git commit";
+      gd = "git diff";
+      gl = "git log";
+      gp = "git pull";
       goops = "git add -A; and git reset --hard HEAD";
     };
   };
