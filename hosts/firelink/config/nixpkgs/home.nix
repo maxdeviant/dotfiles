@@ -32,7 +32,14 @@
   };
 
   home.packages = with pkgs; [
+    # Utilities
     ripgrep
+
+    # Just for fun
+    cmatrix
+    cowsay
+
+    # Applications
     discord
   ];
 
