@@ -17,8 +17,12 @@ mkdir -p ~/.config/sxhkd
 ln -i -s $(pwd)/config/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
 mkdir -p ~/.colors
-ln -i -s $(pwd)/colors/s3r0 ~/.colors/s3r0
+ln -i -s $(pwd)/colors/ephemeral ~/.colors/ephemeral
+ln -i -s $(pwd)/colors/lovelace ~/.colors/lovelace
+ln -i -s $(pwd)/colors/manta ~/.colors/manta
 ln -i -s $(pwd)/colors/nord ~/.colors/nord
+ln -i -s $(pwd)/colors/s3r0 ~/.colors/s3r0
+ln -i -s $(pwd)/colors/skyfall ~/.colors/skyfall
 
 mkdir -p ~/.scripts
 ln -i -s $(pwd)/scripts/showcolors ~/.scripts/showcolors
