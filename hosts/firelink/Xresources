@@ -1,9 +1,23 @@
 #include "/home/maxdeviant/.colors/s3r0"
 
+!
 ! urxvt
+!
+
 urxvt*scrollBar: false
 urxvt*depth: 32
 urxvt*dynamicColors: on
 
+! Enable nicer copy/paste hotkeys.
+urxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
+urxvt.keysym.Control-Shift-V: eval:paste_clipboard
+
+! Disable Picture Insert Mode and ISO 14755 mode.
+urxvt.iso14755: false
+urxvt.iso14755_52: false
+
+!
 ! Fonts
+!
+
 urxvt*font: xft:fira code retina:size=12
