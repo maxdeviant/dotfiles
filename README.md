@@ -4,7 +4,7 @@
 
 Welcome to my [dotfiles](https://wiki.archlinux.org/index.php/Dotfiles) repository!
 
-# Structure
+## Structure
 
 Here is a breakdown of the structure of the repository:
 
