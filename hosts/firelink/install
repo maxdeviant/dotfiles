@@ -16,6 +16,10 @@ ln -i -s $(pwd)/config/polybar/launch ~/.config/polybar/launch
 mkdir -p ~/.config/sxhkd
 ln -i -s $(pwd)/config/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
+mkdir -p ~/.colors
+ln -i -s $(pwd)/colors/s3r0 ~/.colors/s3r0
+ln -i -s $(pwd)/colors/nord ~/.colors/nord
+
 mkdir -p ~/.scripts
 ln -i -s $(pwd)/scripts/showcolors ~/.scripts/showcolors
 ln -i -s $(pwd)/scripts/showfont ~/.scripts/showfont
