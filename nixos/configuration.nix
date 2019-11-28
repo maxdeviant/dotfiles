@@ -60,6 +60,7 @@
     htop
     neofetch
     neovim
+    pavucontrol
     psmisc
     rxvt_unicode
     scrot
