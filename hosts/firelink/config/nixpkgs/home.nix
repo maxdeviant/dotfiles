@@ -34,6 +34,7 @@
   home.packages = with pkgs; [
     # Utilities
     ripgrep
+    sublime-merge
 
     # Just for fun
     cmatrix
