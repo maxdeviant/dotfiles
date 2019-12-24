@@ -35,6 +35,7 @@
     # Utilities
     ripgrep
     sublime-merge
+    unzip
 
     # Just for fun
     cmatrix
