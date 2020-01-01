@@ -45,6 +45,7 @@
 
     # Applications
     discord
+    spotify
   ];
 
   home.sessionVariables = {
