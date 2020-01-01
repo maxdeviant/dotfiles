@@ -33,9 +33,11 @@
 
   home.packages = with pkgs; [
     # Utilities
+    aseprite
     ripgrep
     sublime-merge
     unzip
+    vscode
 
     # Just for fun
     cmatrix
