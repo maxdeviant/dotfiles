@@ -4,7 +4,7 @@
 
 ## Introduction
 
-I use [Home Manager](home-manager) to do most of the heavy lifting for my dotfiles.
+I use [Home Manager](https://github.com/rycee/home-manager) to do most of the heavy lifting for my dotfiles.
 
 ## Installation
 
@@ -14,5 +14,3 @@ cd ~/dotfiles/hosts/firelink
 yes | ./install
 home-manager switch
 ```
-
-[home-manager]: https://github.com/rycee/home-manager
