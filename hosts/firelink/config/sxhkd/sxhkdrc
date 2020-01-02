@@ -34,6 +34,10 @@ super + {t,shift + t,s,f}
 super + ctrl + {h,j,k,l}
     bspc node -p {west,south,north,east}
 
+# Cancel the current spawn direction selection.
+super + ctrl + space
+    bspc node -p cancel
+
 # Change selection or move the selected node.
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
