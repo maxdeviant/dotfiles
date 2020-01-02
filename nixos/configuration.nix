@@ -71,9 +71,6 @@
     google-chrome
     tdesktop
 
-    # Build dependencies
-    gcc
-
     # Haskell
     stack
 
