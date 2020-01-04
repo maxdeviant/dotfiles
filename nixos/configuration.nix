@@ -78,6 +78,9 @@
     # Haskell
     stack
 
+    # Python
+    python3
+
     # Rust
     rustup
   ];
