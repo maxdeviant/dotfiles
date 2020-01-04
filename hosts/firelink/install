@@ -9,6 +9,9 @@ ln -i -s $(pwd)/config/nixpkgs/home.nix ~/.config/nixpkgs/home.nix
 mkdir -p ~/.config/bspwm
 ln -i -s $(pwd)/config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 
+mkdir -p ~/.config/fontconfig/conf.d
+ln -i -s $(pwd)/config/fontconfig/conf.d/01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
+
 mkdir -p ~/.config/polybar
 ln -i -s $(pwd)/config/polybar/config ~/.config/polybar/config
 ln -i -s $(pwd)/config/polybar/launch ~/.config/polybar/launch
