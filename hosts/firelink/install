@@ -25,5 +25,6 @@ ln -i -s $(pwd)/colors/s3r0 ~/.colors/s3r0
 ln -i -s $(pwd)/colors/skyfall ~/.colors/skyfall
 
 mkdir -p ~/.scripts
+ln -i -s $(pwd)/scripts/gravic_vpn ~/.scripts/gravic_vpn
 ln -i -s $(pwd)/scripts/showcolors ~/.scripts/showcolors
 ln -i -s $(pwd)/scripts/showfont ~/.scripts/showfont

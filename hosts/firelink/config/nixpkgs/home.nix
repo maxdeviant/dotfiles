@@ -46,6 +46,10 @@
     # Applications
     discord
     spotify
+
+    # VPN/Remote Desktop
+    remmina
+    sstp
   ];
 
   home.sessionVariables = {
