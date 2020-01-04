@@ -45,3 +45,7 @@ super + {_,shift + }{h,j,k,l}
 # Select the previous or next desktop.
 super + bracket{left,right}
     bspc desktop -f {prev,next}
+
+# Select the given desktop.
+super + {1-9,0}
+    bspc desktop -f '^{1-9,10}'
