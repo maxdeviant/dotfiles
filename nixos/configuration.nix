@@ -15,6 +15,13 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    # "nodev" means we generate a GRUB boot menu but don't install GRUB.
+    devices = [ "nodev" ];
+    efiSupport = true;
+    useOSProber = true;
+  };
 
   networking.hostName = "firelink"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
