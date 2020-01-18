@@ -50,6 +50,10 @@
     # VPN/Remote Desktop
     remmina
     sstp
+
+    # Elm
+    elmPackages.elm
+    elmPackages.elm-format
   ];
 
   home.sessionVariables = {
