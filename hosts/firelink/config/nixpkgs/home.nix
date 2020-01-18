@@ -54,6 +54,9 @@
     # Elm
     elmPackages.elm
     elmPackages.elm-format
+
+    # Node
+    nodejs
   ];
 
   home.sessionVariables = {
