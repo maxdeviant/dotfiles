@@ -34,6 +34,7 @@
   home.packages = with pkgs; [
     # Utilities
     aseprite
+    now-cli
     ripgrep
     sublime-merge
     unzip
