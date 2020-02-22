@@ -49,6 +49,9 @@
     discord
     spotify
 
+    # Games
+    runelite
+
     # VPN/Remote Desktop
     remmina
     sstp
