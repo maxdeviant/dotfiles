@@ -34,6 +34,7 @@
   home.packages = with pkgs; [
     # Utilities
     aseprite
+    ffmpeg
     now-cli
     ripgrep
     sublime-merge
