@@ -74,6 +74,7 @@
     xorg.xdpyinfo
 
     # Applications
+    bat
     feh
     git
     htop
