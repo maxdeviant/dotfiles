@@ -64,6 +64,18 @@
     nodejs
   ];
 
+  services.spotifyd = {
+    enable = true;
+    settings = {
+      global = {
+        username = "maxdeviant";
+        password_cmd = "/home/maxdeviant/.spotify_pass";
+        device_name = "firelink_daemon";
+        backend = "pulseaudio";
+      };
+    };
+  };
+
   home.sessionVariables = {
     EDITOR = "vim";
   };
