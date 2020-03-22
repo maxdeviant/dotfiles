@@ -31,3 +31,6 @@ mkdir -p ~/.scripts
 ln -i -s $(pwd)/scripts/gravic_vpn ~/.scripts/gravic_vpn
 ln -i -s $(pwd)/scripts/showcolors ~/.scripts/showcolors
 ln -i -s $(pwd)/scripts/showfont ~/.scripts/showfont
+
+mkdir -p ~/.stack
+ln -i -s $(pwd)/stack/config.yaml ~/.stack/config.yaml
