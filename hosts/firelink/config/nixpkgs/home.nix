@@ -15,6 +15,8 @@
       goops = "git add -A; and git reset --hard HEAD";
     };
     shellInit = ''
+      set -gx PATH $PATH ~/.local/bin
+
       function gll
         git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
       end
