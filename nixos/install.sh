@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 NIXOS_CONFIGURATION_URL=https://raw.githubusercontent.com/maxdeviant/dotfiles/master/nixos/configuration.nix
+SWAP_SIZE_IN_GB=8
 
 if [ "$EUID" -ne 0 ]; then
     echo "Please run as root."
@@ -40,10 +41,10 @@ if [ -b "$1" ]; then
 
     $RUN parted "$BLOCK_DEV" -- mklabel gpt
 
-    $RUN parted "$BLOCK_DEV" -- mkpart primary 512MiB -8GiB
+    $RUN parted "$BLOCK_DEV" -- mkpart primary 512MiB -${SWAP_SIZE_IN_GB}GiB
     NIXOS_PARTITION="${BLOCK_DEV}${PARTITION_PREFIX}1"
 
-    $RUN parted "$BLOCK_DEV" -- mkpart primary linux-swap -8GiB 100%
+    $RUN parted "$BLOCK_DEV" -- mkpart primary linux-swap -${SWAP_SIZE_IN_GB}GiB 100%
     SWAP_PARTITION="${BLOCK_DEV}${PARTITION_PREFIX}2"
 
     $RUN parted "$BLOCK_DEV" -- mkpart ESP fat32 1MiB 512MiB
