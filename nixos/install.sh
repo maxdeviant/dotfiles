@@ -10,6 +10,14 @@ fi
 if [ -b "$1" ]; then
     BLOCK_DEV=$1
 
+    if [[ $* == *--dry-run* ]]; then
+        RUN=echo
+
+        echo "Performing a dry run!"
+    else
+        RUN=''
+    fi
+
     if [[ "$BLOCK_DEV" == *"nvme"* ]]; then
         IS_NVME=1
     else
@@ -30,16 +38,16 @@ if [ -b "$1" ]; then
         PARTITION_PREFIX=''
     fi
 
-    parted "$BLOCK_DEV" -- mklabel gpt
+    $RUN parted "$BLOCK_DEV" -- mklabel gpt
 
-    parted "$BLOCK_DEV" -- mkpart primary 512MiB -8GiB
+    $RUN parted "$BLOCK_DEV" -- mkpart primary 512MiB -8GiB
     NIXOS_PARTITION="${BLOCK_DEV}${PARTITION_PREFIX}1"
 
-    parted "$BLOCK_DEV" -- mkpart primary linux-swap -8GiB 100%
+    $RUN parted "$BLOCK_DEV" -- mkpart primary linux-swap -8GiB 100%
     SWAP_PARTITION="${BLOCK_DEV}${PARTITION_PREFIX}2"
 
-    parted "$BLOCK_DEV" -- mkpart ESP fat32 1MiB 512MiB
-    parted "$BLOCK_DEV" -- set 3 boot on
+    $RUN parted "$BLOCK_DEV" -- mkpart ESP fat32 1MiB 512MiB
+    $RUN parted "$BLOCK_DEV" -- set 3 boot on
     BOOT_PARTITION="${BLOCK_DEV}${PARTITION_PREFIX}3"
 
     #
@@ -48,9 +56,9 @@ if [ -b "$1" ]; then
 
     echo "Formatting partitions..."
 
-    mkfs.ext4 -L nixos "$NIXOS_PARTITION"
-    mkswap -L swap "$SWAP_PARTITION"
-    mkfs.fat -F 32 -n boot "$BOOT_PARTITION"
+    $RUN mkfs.ext4 -L nixos "$NIXOS_PARTITION"
+    $RUN mkswap -L swap "$SWAP_PARTITION"
+    $RUN mkfs.fat -F 32 -n boot "$BOOT_PARTITION"
 
     #
     # 2.3. Installing
@@ -58,19 +66,19 @@ if [ -b "$1" ]; then
 
     echo "Mounting filesystems..."
 
-    mount "$NIXOS_PARTITION" /mnt
+    $RUN mount "$NIXOS_PARTITION" /mnt
 
-    mkdir -p /mnt/boot
-    mount "$BOOT_PARTITION" /mnt/boot
+    $RUN mkdir -p /mnt/boot
+    $RUN mount "$BOOT_PARTITION" /mnt/boot
 
     echo "Generating default NixOS configuration..."
-    nixos generate-config --root /mnt
+    $RUN nixos generate-config --root /mnt
 
     echo "Applying NixOS configuration from $NIXOS_CONFIGURATION_URL..."
-    curl -o /mnt/etc/nixos/configuration.nix $NIXOS_CONFIGURATION_URL
+    $RUN curl -o /mnt/etc/nixos/configuration.nix $NIXOS_CONFIGURATION_URL
 
     echo "Starting the NixOS install..."
-    nixos-install
+    $RUN nixos-install
 else
-    echo "Usage: $0 /dev/<BLOCK_DEV>"
+    echo "Usage: $0 /dev/<BLOCK_DEV> [--dry-run]"
 fi
