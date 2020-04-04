@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 NIXOS_CONFIGURATION_URL=https://raw.githubusercontent.com/maxdeviant/dotfiles/master/nixos/configuration.nix
 
