@@ -72,7 +72,7 @@ if [ -b "$1" ]; then
     $RUN mount "$BOOT_PARTITION" /mnt/boot
 
     echo "Generating default NixOS configuration..."
-    $RUN nixos generate-config --root /mnt
+    $RUN nixos-generate-config --root /mnt
 
     echo "Applying NixOS configuration from $NIXOS_CONFIGURATION_URL..."
     $RUN curl -o /mnt/etc/nixos/configuration.nix $NIXOS_CONFIGURATION_URL
