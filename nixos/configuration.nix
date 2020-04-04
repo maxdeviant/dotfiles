@@ -152,6 +152,8 @@
 
   programs.fish.enable = true;
 
+  programs.ssh.startAgent = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.maxdeviant = {
     isNormalUser = true;
