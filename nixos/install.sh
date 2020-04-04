@@ -32,7 +32,7 @@ if [ -b "$1" ]; then
 
     echo "Partitioning drive..."
 
-    if $IS_NVME; then
+    if [ $IS_NVME -eq 1 ]; then
         PARTITION_PREFIX=p
     else
         PARTITION_PREFIX=''
