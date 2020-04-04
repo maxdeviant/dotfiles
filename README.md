@@ -60,3 +60,9 @@ Once the script has completed successfully and the `root` password has been set 
 ```
 # reboot
 ```
+
+### Installing Home Manager
+
+Installing NixOS is only half the story. In order to get the system completely up and running we also need to install [Home Manager](https://github.com/rycee/home-manager) to configure our user environment.
+
+I'm still in the process of documenting/automating this phase of the setup.
