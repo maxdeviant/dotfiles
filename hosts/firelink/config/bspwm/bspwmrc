@@ -10,6 +10,11 @@ bspc config borderless_monocle true
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Google-chrome desktop='^2' follow=on
+bspc rule -a discord desktop='^10' state=floating follow=on
+bspc rule -a TelegramDesktop desktop='^10' state=floating follow=on
+
 $HOME/.config/polybar/launch
 
 $HOME/.fehbg
