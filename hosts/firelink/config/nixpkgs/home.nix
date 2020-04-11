@@ -1,5 +1,21 @@
 { config, pkgs, ... }:
 
+let
+  extensions = (with pkgs.vscode-extensions; [
+    bbenoist.Nix
+  ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    {
+      name = "night-owl";
+      publisher = "sdras";
+      version = "1.1.3";
+      sha256 = "b7a0859f0d976d5f46a266e93a8b989ce3acd5423021265d61dd5c57fda1a9b5";
+    }
+  ];
+
+  vscode-with-extensions = pkgs.vscode-with-extensions.override {
+    vscodeExtensions = extensions;
+  };
+in
 {
   programs.home-manager.enable = true;
 
@@ -41,7 +57,7 @@
     ripgrep
     sublime-merge
     unzip
-    vscode
+    vscode-with-extensions
 
     # Just for fun
     cmatrix
