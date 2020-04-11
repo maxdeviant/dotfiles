@@ -157,6 +157,11 @@
 
   programs.ssh.startAgent = true;
 
+  # Enable VirtualBox.
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.x11 = true;
+  users.extraGroups.vboxusers.members = [ "maxdeviant" ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.maxdeviant = {
     isNormalUser = true;
