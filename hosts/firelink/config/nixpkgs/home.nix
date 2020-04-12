@@ -10,6 +10,24 @@ let
       version = "1.1.3";
       sha256 = "b7a0859f0d976d5f46a266e93a8b989ce3acd5423021265d61dd5c57fda1a9b5";
     }
+    {
+      name = "prettier-vscode";
+      publisher = "esbenp";
+      version = "4.2.0";
+      sha256 = "aa06fd553445d32034fde7ff3b90ba45550ea585d4ec2a1193f39acc89d0e6c9";
+    }
+    {
+      name = "vscode-guid";
+      publisher = "heaths";
+      version = "1.4.19";
+      sha256 = "43359327721e6cfb1effb8d6a34370c8fb2eb5a89e9ca219f0e0ba49d3fce24c";
+    }
+    {
+      name = "better-toml";
+      publisher = "bungcip";
+      version = "0.3.2";
+      sha256 = "83e2df8230274ae4a3fe74a694f741d2ddbd92a4e67a0641e41d5c6333fc9022";
+    }
   ];
 
   vscode-with-extensions = pkgs.vscode-with-extensions.override {
