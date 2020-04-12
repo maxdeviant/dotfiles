@@ -54,6 +54,7 @@ in
     aseprite
     ffmpeg
     now-cli
+    riot-desktop
     ripgrep
     sublime-merge
     unzip
