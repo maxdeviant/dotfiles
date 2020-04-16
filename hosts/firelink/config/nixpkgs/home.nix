@@ -11,6 +11,12 @@ let
       sha256 = "b7a0859f0d976d5f46a266e93a8b989ce3acd5423021265d61dd5c57fda1a9b5";
     }
     {
+      name = "nix-env-selector";
+      publisher = "arrterian";
+      version = "0.1.2";
+      sha256 = "693371af5b1a51a37d23cd946020ec42f1fd5015a3b9efc14a75263103a7b1d8";
+    }
+    {
       name = "prettier-vscode";
       publisher = "esbenp";
       version = "4.2.0";
