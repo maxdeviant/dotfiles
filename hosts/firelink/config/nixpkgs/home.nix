@@ -17,6 +17,12 @@ let
       sha256 = "693371af5b1a51a37d23cd946020ec42f1fd5015a3b9efc14a75263103a7b1d8";
     }
     {
+      name = "language-haskell";
+      publisher = "justusadam";
+      version = "2.7.0";
+      sha256 = "85d1ca78376e62a81c06acc27047ecbc674800ed73acc8625bdb0315deead6fc";
+    }
+    {
       name = "prettier-vscode";
       publisher = "esbenp";
       version = "4.2.0";
