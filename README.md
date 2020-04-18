@@ -1,6 +1,6 @@
 # dotfiles
 
-> ~/ sweet ~/
+> ~ sweet ~
 
 Welcome to my [dotfiles](https://wiki.archlinux.org/index.php/Dotfiles) repository!
 
