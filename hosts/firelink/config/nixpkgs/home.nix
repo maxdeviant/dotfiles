@@ -84,6 +84,7 @@ in
     aseprite
     ffmpeg
     now-cli
+    playerctl
     riot-desktop
     ripgrep
     sublime-merge
