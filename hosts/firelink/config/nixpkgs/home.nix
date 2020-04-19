@@ -47,6 +47,15 @@ let
   };
 in
 {
+  nixpkgs.overlays = [
+    (self: super:
+    {
+      spotifyd = super.spotifyd.override {
+        withPulseAudio = true;
+      };
+    })
+  ];
+
   programs.home-manager.enable = true;
 
   programs.fish = {
