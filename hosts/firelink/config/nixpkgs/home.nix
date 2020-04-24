@@ -52,6 +52,7 @@ in
     {
       spotifyd = super.spotifyd.override {
         withPulseAudio = true;
+        withMpris = true;
       };
     })
   ];

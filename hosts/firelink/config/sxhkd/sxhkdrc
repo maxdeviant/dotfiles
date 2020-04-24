@@ -49,3 +49,22 @@ super + bracket{left,right}
 # Select the given desktop.
 super + {1-9,0}
     bspc desktop -f '^{1-9,10}'
+
+#
+# Media keys
+#
+
+XF86AudioRaiseVolume
+    playerctl --player=spotifyd volume .03+
+
+XF86AudioLowerVolume
+    playerctl --player=spotifyd volume .03-
+
+XF86AudioPlay
+    playerctl --player=spotifyd play-pause
+
+XF86AudioNext
+    playerctl --player=spotifyd next
+
+XF86AudioPrev
+    playerctl --player=spotifyd previous
