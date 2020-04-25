@@ -42,6 +42,10 @@ super + ctrl + space
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 
+# Move the selected node to the specified desktop.
+super + shift + {1-9,0}
+    bspc node -d '^{1-9,10}' --follow
+
 # Select the previous or next desktop.
 super + bracket{left,right}
     bspc desktop -f {prev,next}
