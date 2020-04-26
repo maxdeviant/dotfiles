@@ -72,6 +72,7 @@
     dmenu
     polybar
     xorg.xdpyinfo
+    xautomation
 
     # Applications
     bat

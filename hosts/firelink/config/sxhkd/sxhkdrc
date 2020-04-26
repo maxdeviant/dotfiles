@@ -54,6 +54,10 @@ super + bracket{left,right}
 super + {1-9,0}
     bspc desktop -f '^{1-9,10}'
 
+# Bind right control to a left click (for playing OSRS).
+Control_R
+    xte 'mouseclick 1'
+
 #
 # Media keys
 #
