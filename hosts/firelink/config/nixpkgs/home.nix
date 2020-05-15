@@ -23,6 +23,12 @@ let
       sha256 = "85d1ca78376e62a81c06acc27047ecbc674800ed73acc8625bdb0315deead6fc";
     }
     {
+      name = "rust";
+      publisher = "rust-lang";
+      version = "0.7.8";
+      sha256 = "637dda81234c5666950907587799b3c2388ae494d94edcd39264864d0ad2360d";
+    }
+    {
       name = "prettier-vscode";
       publisher = "esbenp";
       version = "4.2.0";
