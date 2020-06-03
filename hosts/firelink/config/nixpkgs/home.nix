@@ -23,6 +23,18 @@ let
       sha256 = "85d1ca78376e62a81c06acc27047ecbc674800ed73acc8625bdb0315deead6fc";
     }
     {
+      name = "language-purescript";
+      publisher = "nwolverson";
+      version = "0.2.4";
+      sha256 = "fc2cc16515dd9840418ae5deada644c4638a05e51a50f21ac807499ec08c8699";
+    }
+    {
+      name = "ide-purescript";
+      publisher = "nwolverson";
+      version = "0.20.15";
+      sha256 = "34baa6ba07bd61de5d0eb6679895b3973675e7e576b61d0ae08ceac031ec4d54";
+    }
+    {
       name = "rust";
       publisher = "rust-lang";
       version = "0.7.8";
