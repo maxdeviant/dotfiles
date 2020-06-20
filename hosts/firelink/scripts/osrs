@@ -1,0 +1,3 @@
+#!/bin/sh
+
+GDK_SCALE=2 _JAVA_AWT_WM_NONREPARENTING=1 runelite
