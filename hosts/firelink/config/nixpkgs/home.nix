@@ -112,6 +112,7 @@ in
     aseprite
     ffmpeg
     now-cli
+    pick-colour-picker
     playerctl
     riot-desktop
     ripgrep
