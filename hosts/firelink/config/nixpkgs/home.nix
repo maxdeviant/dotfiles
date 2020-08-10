@@ -110,11 +110,11 @@ in
   home.packages = with pkgs; [
     # Utilities
     aseprite
+    element-desktop
     ffmpeg
     now-cli
     pick-colour-picker
     playerctl
-    riot-desktop
     ripgrep
     sublime-merge
     unzip
