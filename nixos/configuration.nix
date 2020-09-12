@@ -163,6 +163,10 @@
   virtualisation.virtualbox.guest.x11 = true;
   users.extraGroups.vboxusers.members = [ "maxdeviant" ];
 
+  # Enable 32-bit support for Steam.
+  hardware.opengl.driSupport32Bit = true;
+  hardware.pulseaudio.support32Bit = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.maxdeviant = {
     isNormalUser = true;

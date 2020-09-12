@@ -130,6 +130,7 @@ in
 
     # Games
     runelite
+    steam
 
     # VPN/Remote Desktop
     remmina
