@@ -6,6 +6,7 @@ height = 36
 font-0 = Fira Code Retina:size=16
 
 modules-left = bspwm
+modules-center = now-playing
 modules-right = date
 
 [module/bspwm]
@@ -31,3 +32,8 @@ type = internal/date
 date = %Y-%m-%d %I:%M %p
 
 label = " %date% "
+
+[module/now-playing]
+type = custom/script
+
+exec = ~/.config/polybar/now_playing

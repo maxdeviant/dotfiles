@@ -15,6 +15,7 @@ ln -i -s $(pwd)/config/fontconfig/conf.d/01-emoji.conf ~/.config/fontconfig/conf
 mkdir -p ~/.config/polybar
 ln -i -s $(pwd)/config/polybar/config ~/.config/polybar/config
 ln -i -s $(pwd)/config/polybar/launch ~/.config/polybar/launch
+ln -i -s $(pwd)/config/polybar/now_playing ~/.config/polybar/now_playing
 
 mkdir -p ~/.config/sxhkd
 ln -i -s $(pwd)/config/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
