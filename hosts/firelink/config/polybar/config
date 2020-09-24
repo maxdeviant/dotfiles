@@ -28,4 +28,6 @@ label-empty = " %name% "
 [module/date]
 type = internal/date
 
-date = %Y-%m-%d %H:%M
+date = %Y-%m-%d %I:%M %p
+
+label = " %date% "
