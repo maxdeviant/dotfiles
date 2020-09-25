@@ -128,6 +128,7 @@ in
     # Applications
     discord
     spotify
+    zoom-us
 
     # Games
     runelite
