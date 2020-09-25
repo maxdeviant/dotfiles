@@ -82,6 +82,7 @@
     neofetch
     neovim
     pavucontrol
+    pciutils
     psmisc
     rxvt_unicode
     scrot
