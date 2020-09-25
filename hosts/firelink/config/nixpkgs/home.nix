@@ -117,6 +117,7 @@ in
     playerctl
     ripgrep
     sublime-merge
+    xfce.thunar
     unzip
     vscode-with-extensions
 
