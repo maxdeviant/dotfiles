@@ -101,6 +101,30 @@ in
     '';
   };
 
+  programs.bash.enable = true;
+
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = true;
+    enableZshIntegration = false;
+    settings = {
+      add_newline = false;
+      character.symbol = "λ";
+      username = {
+        show_always = true;
+      };
+      hostname = {
+        ssh_only = false;
+      };
+      directory = {
+        truncation_length = 1;
+        truncate_to_repo = false;
+        fish_style_pwd_dir_length = 1;
+      };
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "Marshall Bowers";
