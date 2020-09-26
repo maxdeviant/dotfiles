@@ -4,7 +4,7 @@
 
 # Spawn terminal.
 super + Return
-    urxvt
+    alacritty
 
 # Open program launcher.
 super + space

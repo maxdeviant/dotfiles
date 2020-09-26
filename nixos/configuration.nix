@@ -75,6 +75,7 @@
     xautomation
 
     # Applications
+    alacritty
     bat
     feh
     git
@@ -84,7 +85,6 @@
     pavucontrol
     pciutils
     psmisc
-    rxvt_unicode
     scrot
     tailscale
     xclip

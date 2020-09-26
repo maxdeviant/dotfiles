@@ -1,0 +1,36 @@
+font:
+  normal:
+    family: "Fira Code Retina"
+
+  size: 12.0
+
+draw_bold_text_with_bright_colors: true
+
+colors:
+  primary:
+    background: "#1d1f28"
+    foreground: "#fdfdfd"
+
+  cursor:
+    text: "#c574dd"
+    cursor: "#c574dd"
+
+  normal:
+    black: "#282a36"
+    red: "#f37f97"
+    green: "#5adecd"
+    yellow: "#f2a272"
+    blue: "#8897f4"
+    magenta: "#c574dd"
+    cyan: "#79e6f3"
+    white: "#fdfdfd"
+
+  bright:
+    black: "#414458"
+    red: "#ff4971"
+    green: "#18e3c8"
+    yellow: "#ff8037"
+    blue: "#556fff"
+    magenta: "#b043d1"
+    cyan: "#3fdcee"
+    white: "#bebec1"
