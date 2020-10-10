@@ -90,6 +90,7 @@ in
     };
     shellInit = ''
       set -gx PATH $PATH ~/.local/bin
+      set -gx PATH $PATH ~/.scripts
 
       function gll
         git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
