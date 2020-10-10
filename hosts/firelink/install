@@ -32,6 +32,7 @@ ln -i -s $(pwd)/colors/s3r0 ~/.colors/s3r0
 ln -i -s $(pwd)/colors/skyfall ~/.colors/skyfall
 
 mkdir -p ~/.scripts
+ln -i -s $(pwd)/scripts/google-chrome-dark ~/.scripts/google-chrome-dark
 ln -i -s $(pwd)/scripts/gravic_vpn ~/.scripts/gravic_vpn
 ln -i -s $(pwd)/scripts/osrs ~/.scripts/osrs
 ln -i -s $(pwd)/scripts/screenshot ~/.scripts/screenshot
