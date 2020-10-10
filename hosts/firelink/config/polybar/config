@@ -35,5 +35,6 @@ label = " %date% "
 
 [module/now-playing]
 type = custom/script
+tail = true
 
 exec = ~/.config/polybar/now_playing
