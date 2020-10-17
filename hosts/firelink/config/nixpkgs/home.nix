@@ -7,56 +7,56 @@ let
     {
       name = "night-owl";
       publisher = "sdras";
-      version = "1.1.3";
-      sha256 = "b7a0859f0d976d5f46a266e93a8b989ce3acd5423021265d61dd5c57fda1a9b5";
+      version = "2.0.0";
+      sha256 = "1s75bp9jdrbqiimf7r36hib64dd83ymqyml7j7726rab0fvggs8b";
     }
     {
       name = "nix-env-selector";
       publisher = "arrterian";
       version = "0.1.2";
-      sha256 = "693371af5b1a51a37d23cd946020ec42f1fd5015a3b9efc14a75263103a7b1d8";
+      sha256 = "1n5ilw1k29km9b0yzfd32m8gvwa2xhh6156d4dys6l8sbfpp2cv9";
     }
     {
       name = "language-haskell";
       publisher = "justusadam";
-      version = "2.7.0";
-      sha256 = "85d1ca78376e62a81c06acc27047ecbc674800ed73acc8625bdb0315deead6fc";
+      version = "3.3.0";
+      sha256 = "1285bs89d7hqn8h8jyxww7712070zw2ccrgy6aswd39arscniffs";
     }
     {
       name = "language-purescript";
       publisher = "nwolverson";
       version = "0.2.4";
-      sha256 = "fc2cc16515dd9840418ae5deada644c4638a05e51a50f21ac807499ec08c8699";
+      sha256 = "16c6ik09wj87r0dg4l0swl2qlqy48jkavpp5i90l166x2mjw2b7w";
     }
     {
       name = "ide-purescript";
       publisher = "nwolverson";
-      version = "0.20.15";
-      sha256 = "34baa6ba07bd61de5d0eb6679895b3973675e7e576b61d0ae08ceac031ec4d54";
+      version = "0.23.2";
+      sha256 = "18qnipa8av2xirpzsihljvvp97vzbx28s9gcqg3q7fqbyl127xjn";
     }
     {
       name = "rust";
       publisher = "rust-lang";
       version = "0.7.8";
-      sha256 = "637dda81234c5666950907587799b3c2388ae494d94edcd39264864d0ad2360d";
+      sha256 = "039ns854v1k4jb9xqknrjkj8lf62nfcpfn0716ancmjc4f0xlzb3";
     }
     {
       name = "prettier-vscode";
       publisher = "esbenp";
-      version = "4.2.0";
-      sha256 = "aa06fd553445d32034fde7ff3b90ba45550ea585d4ec2a1193f39acc89d0e6c9";
+      version = "5.7.1";
+      sha256 = "0f2q17d028j2c816rns9hi2w38ln3mssdcgzm6kc948ih252jflr";
     }
     {
       name = "vscode-guid";
       publisher = "heaths";
-      version = "1.4.19";
-      sha256 = "43359327721e6cfb1effb8d6a34370c8fb2eb5a89e9ca219f0e0ba49d3fce24c";
+      version = "1.4.20";
+      sha256 = "0hqzvwrl6s4s9mw71127a2vbp73bpn6zhlkma88qd5xpklxgw5ax";
     }
     {
       name = "better-toml";
       publisher = "bungcip";
       version = "0.3.2";
-      sha256 = "83e2df8230274ae4a3fe74a694f741d2ddbd92a4e67a0641e41d5c6333fc9022";
+      sha256 = "08lhzhrn6p0xwi0hcyp6lj9bvpfj87vr99klzsiy8ji7621dzql3";
     }
   ];
 
