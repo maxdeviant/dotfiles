@@ -1,4 +1,0 @@
-export PANEL_FIFO="/tmp/panel-fifo"
-killall panel
-
-[[ -z $DISPLAY && XDG_VTNR -eq 1 ]] && exec startx
