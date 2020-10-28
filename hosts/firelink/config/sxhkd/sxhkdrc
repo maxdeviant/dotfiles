@@ -54,9 +54,9 @@ super + {_,shift + }{h,j,k,l}
 super + shift + {1-9,0}
     bspc node -d '^{1-9,10}' --follow
 
-# Select the previous or next desktop.
+# Select the previous or next desktop on the current monitor.
 super + bracket{left,right}
-    bspc desktop -f {prev,next}
+    bspc desktop -f {prev,next}.local
 
 # Select the given desktop.
 super + {1-9,0}

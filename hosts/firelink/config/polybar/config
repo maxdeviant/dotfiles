@@ -1,4 +1,15 @@
-[bar/panel]
+[bar/left_monitor]
+monitor = DP-2
+width = 100%
+height = 36
+
+font-0 = Fira Code Retina:size=16
+
+modules-left = bspwm
+modules-center = now-playing
+modules-right = date
+
+[bar/right_monitor]
 monitor = DP-4
 width = 100%
 height = 36
