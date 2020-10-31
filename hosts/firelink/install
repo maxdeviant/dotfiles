@@ -36,7 +36,6 @@ ln -i -s $(pwd)/devenv/purescript.nix ~/.devenv/purescript.nix
 
 mkdir -p ~/.scripts
 ln -i -s $(pwd)/scripts/google-chrome-dark ~/.scripts/google-chrome-dark
-ln -i -s $(pwd)/scripts/gravic_vpn ~/.scripts/gravic_vpn
 ln -i -s $(pwd)/scripts/osrs ~/.scripts/osrs
 ln -i -s $(pwd)/scripts/screenshot ~/.scripts/screenshot
 ln -i -s $(pwd)/scripts/showcolors ~/.scripts/showcolors
