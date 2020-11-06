@@ -21,10 +21,26 @@
 
   programs.fish = {
     enable = true;
+    shellAliases = {
+      gs = "git status";
+      gc = "git commit";
+      gca = "git add -A; and git commit";
+      gd = "git diff";
+      gl = "git log";
+      gp = "git pull";
+      goops = "git add -A; and git reset --hard HEAD";
+    };
     shellInit = ''
       set -p fish_function_path ${pkgs.fish-foreign-env}/share/fish-foreign-env/functions
           fenv source ${config.home.profileDirectory}/etc/profile.d/nix.sh > /dev/null
           set -e fish_function_path[1]
+
+      function gll
+        git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
+      end
+      function glll
+        git log --graph --stat --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
+      end
     '';
   };
 
