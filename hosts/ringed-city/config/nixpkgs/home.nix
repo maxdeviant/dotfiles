@@ -32,12 +32,13 @@
     };
     shellInit = ''
       set -p fish_function_path ${pkgs.fish-foreign-env}/share/fish-foreign-env/functions
-          fenv source ${config.home.profileDirectory}/etc/profile.d/nix.sh > /dev/null
-          set -e fish_function_path[1]
+      fenv source ${config.home.profileDirectory}/etc/profile.d/nix.sh > /dev/null
+      set -e fish_function_path[1]
 
       function gll
         git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
       end
+
       function glll
         git log --graph --stat --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
       end
