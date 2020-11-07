@@ -51,7 +51,7 @@
     settings = {
       font = {
         normal.family = "Fire Code Retina";
-        size = 12;
+        size = 16;
       };
 
       draw_bold_text_with_bright_colors = true;
