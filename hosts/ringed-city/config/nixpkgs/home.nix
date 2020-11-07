@@ -35,6 +35,9 @@
       fenv source ${config.home.profileDirectory}/etc/profile.d/nix.sh > /dev/null
       set -e fish_function_path[1]
 
+      set -gx VOLTA_HOME "$HOME/.volta"
+      set -gx PATH $PATH "$VOLTA_HOME/bin"
+
       function gll
         git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
       end
