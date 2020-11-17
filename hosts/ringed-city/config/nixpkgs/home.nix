@@ -134,6 +134,8 @@
   home.packages = with pkgs; [
     python3
 
+    ripgrep
+    bat
     htop
   ];
 }
