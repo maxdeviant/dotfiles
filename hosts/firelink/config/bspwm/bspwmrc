@@ -1,5 +1,8 @@
 #!/bin/sh
 
+nvidia-settings --assign CurrentMetaMode="DP-2: nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }, DP-4: nvidia-auto-select +3840+0 { ForceFullCompositionPipeline = On }"
+xrandr --output DP-2 --left-of DP-4
+
 sxhkd &
 
 bspc config border_width 2
