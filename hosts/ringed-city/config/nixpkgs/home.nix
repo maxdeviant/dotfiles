@@ -104,7 +104,10 @@
     enableZshIntegration = false;
     settings = {
       add_newline = false;
-      character.symbol = "λ";
+      character = {
+        success_symbol = "[λ](bold green)";
+        error_symbol = "[λ](bold red)";
+      };
       username = {
         show_always = true;
       };
