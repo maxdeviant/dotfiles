@@ -142,5 +142,8 @@
     ripgrep
     bat
     htop
+
+    # WorkOS
+    doppler
   ];
 }
