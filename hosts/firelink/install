@@ -33,6 +33,7 @@ ln -i -s $(pwd)/colors/skyfall ~/.colors/skyfall
 
 mkdir -p ~/.devenv
 ln -i -s $(pwd)/devenv/purescript.nix ~/.devenv/purescript.nix
+ln -i -s $(pwd)/devenv/rust.nix ~/.devenv/rust.nix
 
 mkdir -p ~/.scripts
 ln -i -s $(pwd)/scripts/google-chrome-dark ~/.scripts/google-chrome-dark
