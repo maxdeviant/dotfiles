@@ -164,6 +164,12 @@
   virtualisation.virtualbox.guest.x11 = true;
   users.extraGroups.vboxusers.members = [ "maxdeviant" ];
 
+  # Enable Postgres.
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_13;
+  };
+
   # Enable 32-bit support for Steam.
   hardware.opengl.driSupport32Bit = true;
   hardware.pulseaudio.support32Bit = true;
