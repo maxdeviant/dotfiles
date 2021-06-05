@@ -133,6 +133,9 @@ in
     enable = true;
     userName = "Marshall Bowers";
     userEmail = "elliott.codes@gmail.com";
+    extraConfig = {
+      pull.rebase = false;
+    };
   };
 
   home.packages = with pkgs; [
