@@ -2,25 +2,16 @@
 
 let
   extensions = (with pkgs.vscode-extensions; [
-    bbenoist.Nix
+    bbenoist.nix
+    arrterian.nix-env-selector
+    esbenp.prettier-vscode
+    justusadam.language-haskell
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "night-owl";
       publisher = "sdras";
       version = "2.0.0";
       sha256 = "1s75bp9jdrbqiimf7r36hib64dd83ymqyml7j7726rab0fvggs8b";
-    }
-    {
-      name = "nix-env-selector";
-      publisher = "arrterian";
-      version = "0.1.2";
-      sha256 = "1n5ilw1k29km9b0yzfd32m8gvwa2xhh6156d4dys6l8sbfpp2cv9";
-    }
-    {
-      name = "language-haskell";
-      publisher = "justusadam";
-      version = "3.3.0";
-      sha256 = "1285bs89d7hqn8h8jyxww7712070zw2ccrgy6aswd39arscniffs";
     }
     {
       name = "language-purescript";
@@ -39,12 +30,6 @@ let
       publisher = "rust-lang";
       version = "0.7.8";
       sha256 = "039ns854v1k4jb9xqknrjkj8lf62nfcpfn0716ancmjc4f0xlzb3";
-    }
-    {
-      name = "prettier-vscode";
-      publisher = "esbenp";
-      version = "5.7.1";
-      sha256 = "0f2q17d028j2c816rns9hi2w38ln3mssdcgzm6kc948ih252jflr";
     }
     {
       name = "vscode-guid";
@@ -143,7 +128,7 @@ in
     aseprite
     element-desktop
     ffmpeg
-    now-cli
+    nodePackages.vercel
     pick-colour-picker
     playerctl
     ripgrep
