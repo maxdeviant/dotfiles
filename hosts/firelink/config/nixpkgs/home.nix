@@ -10,20 +10,20 @@ let
     {
       name = "night-owl";
       publisher = "sdras";
-      version = "2.0.0";
-      sha256 = "1s75bp9jdrbqiimf7r36hib64dd83ymqyml7j7726rab0fvggs8b";
+      version = "2.0.1";
+      sha256 = "02a7dc555f46619f862e0bac5df8a3f73e16ceb53d7021e9dec7596f48ba1f31";
     }
     {
       name = "language-purescript";
       publisher = "nwolverson";
-      version = "0.2.4";
-      sha256 = "16c6ik09wj87r0dg4l0swl2qlqy48jkavpp5i90l166x2mjw2b7w";
+      version = "0.2.5";
+      sha256 = "ee8f2918cc3aea2cde133f483661b4f8e4f480ecac48eaf8cd4620a414bef9bd";
     }
     {
       name = "ide-purescript";
       publisher = "nwolverson";
-      version = "0.23.2";
-      sha256 = "18qnipa8av2xirpzsihljvvp97vzbx28s9gcqg3q7fqbyl127xjn";
+      version = "0.25.4";
+      sha256 = "396ed624f42177b28e406d0580755a5f15d33d0aafcf1f2b74f078d26a1e21c0";
     }
     {
       name = "rust";
