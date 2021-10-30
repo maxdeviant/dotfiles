@@ -6,6 +6,7 @@ let
     arrterian.nix-env-selector
     esbenp.prettier-vscode
     justusadam.language-haskell
+    matklad.rust-analyzer
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "night-owl";
@@ -24,12 +25,6 @@ let
       publisher = "nwolverson";
       version = "0.25.4";
       sha256 = "396ed624f42177b28e406d0580755a5f15d33d0aafcf1f2b74f078d26a1e21c0";
-    }
-    {
-      name = "rust";
-      publisher = "rust-lang";
-      version = "0.7.8";
-      sha256 = "039ns854v1k4jb9xqknrjkj8lf62nfcpfn0716ancmjc4f0xlzb3";
     }
     {
       name = "vscode-guid";
