@@ -21,7 +21,8 @@ berryc save_monitor 9 1
 berryc border_width 0
 berryc inner_border_width 4
 berryc title_height 32
-berryc edge_gap 52 16 16 16
+berryc top_gap 52
+berryc edge_gap 16 16 16 16
 
 # Set decoration colors.
 berryc focus_color 282A36
