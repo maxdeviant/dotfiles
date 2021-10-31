@@ -41,7 +41,7 @@ super + f
 super + c
     berryc window_center
 
-super + Tab
+alt + Tab
     berryc cycle_focus
 
 super + {h,j,k,l}
