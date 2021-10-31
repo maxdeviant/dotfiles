@@ -5,6 +5,7 @@ height = 36
 
 font-0 = Fira Code:style=Retina:size=16
 
+modules-left = bspwm
 modules-center = now-playing
 modules-right = date
 
@@ -15,8 +16,26 @@ height = 36
 
 font-0 = Fira Code:style=Retina:size=16
 
+modules-left = bspwm
 modules-center = now-playing
 modules-right = date
+
+[module/bspwm]
+type = internal/bspwm
+
+format = <label-state>
+inline-mode = true
+
+label-focused = " %name% "
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #ff00ff
+
+label-occupied = " %name% "
+
+label-urgent = " %name% "
+
+label-empty = " %name% "
 
 [module/date]
 type = internal/date

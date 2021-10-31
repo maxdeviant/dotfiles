@@ -67,6 +67,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Window Manager
+    bspwm
     sxhkd
     dmenu
     polybar
@@ -142,9 +143,9 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  # Enable berry.
-  services.xserver.windowManager.berry.enable = true;
-  services.xserver.displayManager.defaultSession = "none+berry";
+  # Enable bspwm
+  services.xserver.windowManager.bspwm.enable = true;
+  services.xserver.displayManager.defaultSession = "none+bspwm";
 
   services.xserver.displayManager.lightdm.enable = true;
 
