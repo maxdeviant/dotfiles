@@ -143,7 +143,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  # Enable bspwm
+  # Enable bspwm.
   services.xserver.windowManager.bspwm.enable = true;
   services.xserver.displayManager.defaultSession = "none+bspwm";
 
