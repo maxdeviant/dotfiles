@@ -23,44 +23,44 @@ Control_R
     xte 'mouseclick 1'
 
 #
-# berry hotkeys
+# bspwm hotkeys
 #
 
+# Quit bspwm.
 super + alt + Escape
-    berryc quit
+    bspc quit
 
+# Close node.
 super + w
-    berryc window_close
+    bspc node -c
 
-super + m
-    berryc window_monocle
+# Change node state.
+super + {t,shift + t,s,f}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-super + f
-    berryc fullscreen
+# Choose the direction in which to spawn a node.
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
 
-super + c
-    berryc window_center
+# Cancel the current spawn direction selection.
+super + ctrl + space
+    bspc node -p cancel
 
-alt + Tab
-    berryc cycle_focus
+# Change selection or move the selected node.
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
 
-super + {h,j,k,l}
-    berryc cardinal_focus {2,1,3,0}
+# Move the selected node to the specified desktop.
+super + shift + {1-9,0}
+    bspc node -d '^{1-9,10}' --follow
 
-super + shift + {h,j,k,l}
-    berryc window_move {-50 0,0 50,0 -50,50 0}
+# Select the previous or next desktop on the current monitor.
+super + bracket{left,right}
+    bspc desktop -f {prev,next}.local
 
-super + alt + {h,l}
-    berryc {snap_left,snap_right}
-
-super + {1-9}
-    berryc switch_workspace {0-9}
-
-super + shift + {1-9}
-    berryc send_to_workspace {0-9}
-
-~button1
-    berryc pointer_focus
+# Select the given desktop.
+super + {1-9,0}
+    bspc desktop -f '^{1-9,10}'
 
 #
 # Media keys
