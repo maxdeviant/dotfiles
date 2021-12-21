@@ -80,12 +80,12 @@
     feh
     git
     htop
+    maim
     neofetch
     neovim
     pavucontrol
     pciutils
     psmisc
-    scrot
     tailscale
     xclip
     wget
