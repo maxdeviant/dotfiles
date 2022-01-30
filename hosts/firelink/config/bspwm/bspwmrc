@@ -16,7 +16,7 @@ bspc monitor DP-4 -d VI VII VIII IX X
 
 # Note: Use `xprop | rg WM_CLASS` to get window names.
 bspc rule -a Pavucontrol state=floating
-bspc rule -a net-runelite-client-RuneLite state=pseudo_tiled
+bspc rule -a net-runelite-client-RuneLite state=floating
 bspc rule -a Google-chrome desktop='^2' follow=on
 bspc rule -a discord desktop='^10' state=pseudo_tiled follow=on
 bspc rule -a TelegramDesktop desktop='^10' state=pseudo_tiled follow=on
