@@ -67,7 +67,6 @@
     # Window Manager
     bspwm
     sxhkd
-    dmenu
     polybar
     xorg.xdpyinfo
     xautomation

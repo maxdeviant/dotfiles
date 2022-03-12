@@ -219,4 +219,11 @@ in
       inoremap <Right> <NOP>
     '';
   };
+
+  programs.rofi = {
+    enable = true;
+    font = "Fira Code 16";
+    terminal = "${pkgs.alacritty}/bin/alacritty";
+    theme = "android_notification";
+  };
 }
