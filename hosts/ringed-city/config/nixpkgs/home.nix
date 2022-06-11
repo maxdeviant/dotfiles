@@ -145,8 +145,10 @@
     ripgrep
     bat
     htop
+    jq
 
     # WorkOS
     doppler
+    teleport
   ];
 }
