@@ -12,8 +12,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
@@ -69,7 +67,6 @@
     # Window Manager
     bspwm
     sxhkd
-    dmenu
     polybar
     xorg.xdpyinfo
     xautomation
@@ -80,12 +77,12 @@
     feh
     git
     htop
+    maim
     neofetch
     neovim
     pavucontrol
     pciutils
     psmisc
-    scrot
     tailscale
     xclip
     wget
@@ -143,7 +140,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  # Enable bspwm
+  # Enable bspwm.
   services.xserver.windowManager.bspwm.enable = true;
   services.xserver.displayManager.defaultSession = "none+bspwm";
 

@@ -8,7 +8,7 @@ super + Return
 
 # Open program launcher.
 super + space
-    dmenu_run -i -p "λ"
+    rofi -show combi -combi-modes "window,run" -modes combi
 
 # Make sxhkd reload its configuration files.
 super + Escape
@@ -50,6 +50,9 @@ super + ctrl + space
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 
+super + alt + {j,k}
+    bspc node -f {next,prev}.local
+
 # Move the selected node to the specified desktop.
 super + shift + {1-9,0}
     bspc node -d '^{1-9,10}' --follow
@@ -61,6 +64,10 @@ super + bracket{left,right}
 # Select the given desktop.
 super + {1-9,0}
     bspc desktop -f '^{1-9,10}'
+
+# Toggle monocle mode for the current desktop.
+super + m
+    bspc desktop -l next
 
 #
 # Media keys
