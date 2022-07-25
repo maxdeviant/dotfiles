@@ -57,7 +57,7 @@
 
     settings = {
       font = {
-        normal.family = "Fire Code Retina";
+        normal.family = "Fira Code Retina";
         size = 16;
       };
 
