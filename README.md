@@ -10,6 +10,7 @@ Here is a breakdown of the structure of the repository:
 
 - [`hosts`](./hosts) contains the dotfiles for my different hosts
   - [`firelink`](./hosts/firelink) is my tower running NixOS
+  - [`profaned-capital`](./hosts/profaned-capital) is my M2 MacBook Air running macOS (with Nix)
   - [`ringed-city`](./hosts/ringed-city) is my work MacBook running macOS (with Nix)
 - [`nixos`](./nixos) contains my NixOS configuration
   - This is currently based on `firelink` but will eventually be made system-agnostic
