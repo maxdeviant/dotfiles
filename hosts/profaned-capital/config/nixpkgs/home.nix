@@ -37,6 +37,12 @@
         else
           "${pkgs.fish-foreign-env}/share/fish-foreign-env/functions"
       }
+
+      # https://github.com/NixOS/nix/issues/1512#issuecomment-374436047
+      if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+        fenv source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+      end
+
       fenv source ${config.home.profileDirectory}/etc/profile.d/nix.sh > /dev/null
       set -e fish_function_path[1]
 
