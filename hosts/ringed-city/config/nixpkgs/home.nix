@@ -153,6 +153,7 @@
     jq
 
     # WorkOS
+    dagger
     doppler
     teleport
   ];
