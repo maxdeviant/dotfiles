@@ -140,6 +140,7 @@
   };
 
   home.packages = with pkgs; [
+    dagger
     ripgrep
     bat
     htop
