@@ -160,7 +160,6 @@ in
     # Games
     runelite
     steam
-    polymc
 
     # VPN/Remote Desktop
     remmina
