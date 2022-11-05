@@ -48,6 +48,9 @@
 
       set -gx PATH $PATH "$HOME/.cargo/bin"
 
+      set -gx VOLTA_HOME "$HOME/.volta"
+      set -gx PATH $PATH "$VOLTA_HOME/bin"
+
       function gll
         git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
       end
