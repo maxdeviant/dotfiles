@@ -70,6 +70,7 @@
     polybar
     xorg.xdpyinfo
     xautomation
+    gnome.adwaita-icon-theme
 
     # Applications
     alacritty
@@ -137,6 +138,8 @@
 
   # Enable touchpad support.
   # services.xserver.libinput.enable = true;
+
+  services.xserver.libinput.mouse.accelSpeed = "-0.5";
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

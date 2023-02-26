@@ -1,1 +1,4 @@
 #include "/home/maxdeviant/.colors/lovelace"
+
+Xcursor.theme: Adwaita
+Xcursor.size: 32
