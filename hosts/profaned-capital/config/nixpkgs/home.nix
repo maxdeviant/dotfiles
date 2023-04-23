@@ -147,5 +147,6 @@
     bat
     htop
     jq
+    just
   ];
 }
