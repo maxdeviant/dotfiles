@@ -148,5 +148,10 @@
     htop
     jq
     just
+
+    # Gleam
+    gleam
+    erlang
+    rebar3
   ];
 }
