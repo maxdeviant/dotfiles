@@ -9,5 +9,6 @@
 {
   "base_keymap": "VSCode",
   "theme": "Sandcastle",
-  "buffer_font_size": 15
+  "buffer_font_size": 15,
+  "format_on_save": "off"
 }
