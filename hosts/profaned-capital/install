@@ -1,5 +1,8 @@
 #!/bin/sh
 
+mkdir -p ~/.config/nix
+ln -i -s $(pwd)/config/nix/nix.conf ~/.config/nix/nix.conf
+
 mkdir -p ~/.config/nixpkgs
 ln -i -s $(pwd)/config/nixpkgs/config.nix ~/.config/nixpkgs/config.nix
 ln -i -s $(pwd)/config/nixpkgs/home.nix ~/.config/nixpkgs/home.nix
