@@ -9,6 +9,7 @@
 {
   "base_keymap": "VSCode",
   "theme": "Sandcastle",
-  "buffer_font_size": 15,
+  "buffer_font_family": "Fira Code Retina",
+  "buffer_font_size": 14,
   "format_on_save": "off"
 }
