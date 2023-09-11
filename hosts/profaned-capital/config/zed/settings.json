@@ -11,5 +11,8 @@
   "theme": "Sandcastle",
   "buffer_font_family": "Fira Code Retina",
   "buffer_font_size": 14,
-  "format_on_save": "off"
+  "format_on_save": "off",
+  "features": {
+    "copilot": false
+  }
 }
