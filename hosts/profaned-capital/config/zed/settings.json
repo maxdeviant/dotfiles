@@ -15,6 +15,9 @@
   "calls": {
     "mute_on_join": false
   },
+  "inlay_hints": {
+    "enabled": true
+  },
   "features": {
     "copilot": false
   }
