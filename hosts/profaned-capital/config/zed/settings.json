@@ -20,5 +20,10 @@
   },
   "features": {
     "copilot": false
+  },
+  "languages": {
+    "Nix": {
+      "tab_size": 2
+    }
   }
 }
