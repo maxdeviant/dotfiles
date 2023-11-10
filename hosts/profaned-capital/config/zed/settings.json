@@ -12,6 +12,7 @@
   "buffer_font_family": "Fira Code Retina",
   "buffer_font_size": 14,
   "format_on_save": "off",
+  "seed_search_query_from_cursor": "selection",
   "calls": {
     "mute_on_join": false
   },
