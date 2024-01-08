@@ -11,6 +11,8 @@
   "theme": "Gruvbox Dark",
   "buffer_font_family": "Fira Code Retina",
   "buffer_font_size": 14,
+  "ui_font_family": "Fira Code Retina",
+  "ui_font_size": 16,
   "format_on_save": "off",
   "seed_search_query_from_cursor": "selection",
   "calls": {
