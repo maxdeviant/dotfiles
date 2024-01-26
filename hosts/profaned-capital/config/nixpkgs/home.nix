@@ -58,6 +58,16 @@
       function glll
         git log --graph --stat --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
       end
+
+      function gopr -a pr_number
+        if not string match -rq "[0-9]+" $pr_number
+          echo "PR number is required."
+          return 1
+        end
+
+        git fetch origin pull/$pr_number/head:pr/$pr_number
+        git checkout pr/$pr_number
+      end
     '';
   };
 
