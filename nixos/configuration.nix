@@ -142,27 +142,20 @@
   services.xserver.libinput.mouse.accelSpeed = "-0.5";
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    # This is needed for Wayland.
+    modesetting.enable = true;
+  };
 
-  # Enable bspwm.
-  services.xserver.windowManager.bspwm.enable = true;
-  services.xserver.displayManager.defaultSession = "none+bspwm";
-
-  services.xserver.displayManager.lightdm.enable = true;
+  # Enable KDE.
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
 
   services.xserver.desktopManager.xterm.enable = false;
-
-  # Enable the KDE Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
 
   programs.fish.enable = true;
 
   programs.ssh.startAgent = true;
-
-  # Enable VirtualBox.
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
-  users.extraGroups.vboxusers.members = [ "maxdeviant" ];
 
   # Enable Postgres.
   services.postgresql = {
