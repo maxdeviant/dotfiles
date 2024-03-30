@@ -7,7 +7,7 @@ ln -i -s $(pwd)/config/nixpkgs/config.nix ~/.config/nixpkgs/config.nix
 ln -i -s $(pwd)/config/nixpkgs/home.nix ~/.config/nixpkgs/home.nix
 
 mkdir -p ~/.config/alacritty
-ln -i -s $(pwd)/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -i -s $(pwd)/config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 mkdir -p ~/.config/bspwm
 ln -i -s $(pwd)/config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
