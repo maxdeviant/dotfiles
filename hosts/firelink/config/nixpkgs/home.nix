@@ -160,6 +160,8 @@ in
     # Games
     runelite
     steam
+    lutris
+    wine
 
     # VPN/Remote Desktop
     remmina
