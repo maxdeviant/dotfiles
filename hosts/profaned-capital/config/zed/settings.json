@@ -16,7 +16,8 @@
   "format_on_save": "off",
   "seed_search_query_from_cursor": "selection",
   "calls": {
-    "mute_on_join": false
+    "mute_on_join": false,
+    "share_on_join": false
   },
   "inlay_hints": {
     "enabled": true
