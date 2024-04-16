@@ -8,7 +8,7 @@
 // from the command palette or from `Zed` application menu.
 {
   "base_keymap": "VSCode",
-  "theme": "Gruvbox Dark",
+  "theme": "Vitesse Dark Soft",
   "buffer_font_family": "Fira Code Retina",
   "buffer_font_size": 14,
   "ui_font_family": "Fira Code Retina",
