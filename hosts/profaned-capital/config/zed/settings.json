@@ -33,5 +33,21 @@
     "Nix": {
       "tab_size": 2
     }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "imports": {
+          "prefix": "crate",
+          "granularity": {
+            "enforce": true,
+            "group": "module"
+          },
+          "procMacro": {
+            "ignored": ["async_trait"]
+          }
+        }
+      }
+    }
   }
 }
