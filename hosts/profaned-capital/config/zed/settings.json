@@ -24,6 +24,10 @@
   "features": {
     "copilot": false
   },
+  "assistant": {
+    "version": "1",
+    "provider": { "name": "zed.dev" }
+  },
   "languages": {
     "Nix": {
       "tab_size": 2
