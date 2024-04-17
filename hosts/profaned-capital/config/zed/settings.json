@@ -15,6 +15,11 @@
   "ui_font_size": 16,
   "format_on_save": "off",
   "seed_search_query_from_cursor": "selection",
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
   "calls": {
     "mute_on_join": false,
     "share_on_join": false
