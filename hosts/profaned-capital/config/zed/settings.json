@@ -28,7 +28,7 @@
     "enabled": true
   },
   "features": {
-    "copilot": false
+    "inline_completion_provider": "none"
   },
   "assistant": {
     "version": "1",
