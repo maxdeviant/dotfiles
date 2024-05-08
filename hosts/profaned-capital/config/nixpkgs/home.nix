@@ -160,7 +160,7 @@
 
     # Gleam
     gleam
-    erlang
+    erlang_26
     rebar3
   ];
 }
