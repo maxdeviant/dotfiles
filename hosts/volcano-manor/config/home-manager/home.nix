@@ -42,6 +42,8 @@
       fenv source ${config.home.profileDirectory}/etc/profile.d/nix.sh > /dev/null
       set -e fish_function_path[1]
 
+      source "$HOME/.cargo/env.fish"
+
       function gll
         git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
       end
