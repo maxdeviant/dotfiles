@@ -143,6 +143,7 @@
     userName = "Marshall Bowers";
     userEmail = "elliott.codes@gmail.com";
     extraConfig = {
+      init.defaultBranch = "main";
       pull.rebase = false;
     };
   };
