@@ -15,6 +15,7 @@
   "ui_font_size": 16,
   "format_on_save": "off",
   "seed_search_query_from_cursor": "selection",
+  "when_closing_with_no_tabs": "keep_window_open",
   "git": {
     "inline_blame": {
       "enabled": false
