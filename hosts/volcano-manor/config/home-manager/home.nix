@@ -155,6 +155,7 @@
     htop
     jq
     just
+    watchexec
 
     # Gleam
     gleam
