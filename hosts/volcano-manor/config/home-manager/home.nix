@@ -155,6 +155,7 @@
     htop
     jq
     just
+    sqlx-cli
     watchexec
 
     # Gleam
