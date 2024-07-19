@@ -25,6 +25,9 @@
     "mute_on_join": false,
     "share_on_join": false
   },
+  "tabs": {
+    "file_icons": true
+  },
   "inlay_hints": {
     "enabled": true
   },
