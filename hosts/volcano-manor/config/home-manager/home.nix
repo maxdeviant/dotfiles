@@ -158,6 +158,10 @@
     sqlx-cli
     watchexec
 
+    # Zed
+    doctl
+    kubectl
+
     # Gleam
     gleam
     erlang_26
