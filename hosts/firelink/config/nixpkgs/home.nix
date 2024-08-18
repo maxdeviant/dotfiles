@@ -6,7 +6,7 @@ let
     arrterian.nix-env-selector
     esbenp.prettier-vscode
     justusadam.language-haskell
-    matklad.rust-analyzer
+    rust-lang.rust-analyzer
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "night-owl";
