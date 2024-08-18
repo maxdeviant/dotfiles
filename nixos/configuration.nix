@@ -19,6 +19,7 @@
     devices = [ "nodev" ];
     efiSupport = true;
     useOSProber = true;
+    configurationLimit = 50;
   };
 
   networking.hostName = "firelink"; # Define your hostname.
