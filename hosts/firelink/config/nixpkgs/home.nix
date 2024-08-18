@@ -192,6 +192,17 @@ in
     EDITOR = "vim";
   };
 
+  xdg.desktopEntries = {
+    discord = {
+      name = "Discord";
+      exec = "Discord --force-device-scale-factor=1.5";
+      icon = "discord";
+      genericName = "All-in-one cross-platform voice and text chat for gamers";
+      categories = ["Network" "InstantMessaging"];
+      mimeType = ["x-scheme-handler/discord"];
+    };
+  };
+
   programs.neovim = {
     enable = true;
     viAlias = true;
