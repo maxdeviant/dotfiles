@@ -147,6 +147,7 @@ in
     xfce.thunar
     unzip
     vscode-with-extensions
+    zed-editor
 
     # Just for fun
     cmatrix
