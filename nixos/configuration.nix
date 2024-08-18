@@ -146,11 +146,15 @@
   hardware.nvidia = {
     # This is needed for Wayland.
     modesetting.enable = true;
+
+    # Fix screen tearing.
+    forceFullCompositionPipeline = true;
   };
 
   # Enable KDE.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.defaultSession = "plasmax11";
 
   services.xserver.desktopManager.xterm.enable = false;
 
