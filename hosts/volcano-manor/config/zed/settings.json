@@ -47,6 +47,9 @@
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
+        "files": {
+          "watcher": "server"
+        },
         "imports": {
           "prefix": "crate",
           "granularity": {
