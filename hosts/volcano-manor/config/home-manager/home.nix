@@ -159,6 +159,7 @@
     watchexec
 
     # Zed
+    cmake
     doctl
     kubectl
 
