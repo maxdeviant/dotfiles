@@ -129,7 +129,7 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -143,6 +143,9 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
+    # We want the proprietary drivers.
+    open = false;
+
     # This is needed for Wayland.
     modesetting.enable = true;
 
@@ -150,10 +153,10 @@
     forceFullCompositionPipeline = true;
   };
 
-  # Enable KDE.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmax11";
+  # Enable Cinnamon.
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.cinnamon.enable = true;
+  services.xserver.displayManager.defaultSession = "cinnamon";
 
   services.xserver.desktopManager.xterm.enable = false;
 
