@@ -151,6 +151,16 @@
     };
   };
 
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Marshall Bowers";
+        email = "elliott.codes@gmail.com";
+      };
+    };
+  };
+
   home.packages = with pkgs; [
     ripgrep
     bat
