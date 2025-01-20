@@ -154,9 +154,15 @@
   home.packages = with pkgs; [
     ripgrep
     bat
+    cloc
+    tree
+    graphviz
     htop
     jq
     just
+
+    doctl
+    kubectl
 
     # Gleam
     gleam
