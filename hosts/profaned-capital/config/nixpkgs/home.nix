@@ -145,7 +145,7 @@
   programs.git = {
     enable = true;
     userName = "Marshall Bowers";
-    userEmail = "elliott.codes@gmail.com";
+    userEmail = "git@maxdeviant.com";
     extraConfig = {
       pull.rebase = false;
     };
@@ -156,7 +156,7 @@
     settings = {
       user = {
         name = "Marshall Bowers";
-        email = "elliott.codes@gmail.com";
+        email = "git@maxdeviant.com";
       };
     };
   };
