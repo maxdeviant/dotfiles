@@ -9,7 +9,9 @@
 {
   "base_keymap": "VSCode",
   "theme": "Melange Dark",
+  "buffer_font_family": "Fira Code Retina",
   "buffer_font_size": 14,
+  "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 16,
   "format_on_save": "off",
   "seed_search_query_from_cursor": "selection",
