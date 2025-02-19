@@ -171,6 +171,9 @@
     just
     watchexec
 
+    # Build dependencies
+    cmake
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
