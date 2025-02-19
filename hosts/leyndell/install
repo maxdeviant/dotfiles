@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mkdir -p ~/.config/home-manager
+ln -i -s $(pwd)/config/home-manager/home.nix ~/.config/home-manager/home.nix
+
+mkdir -p ~/.config/zed
+ln -i -s $(pwd)/config/zed/settings.json ~/.config/zed/settings.json
+ln -i -s $(pwd)/config/zed/keymap.json ~/.config/zed/keymap.json
