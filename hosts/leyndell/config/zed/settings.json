@@ -31,6 +31,9 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
+  "edit_predictions": {
+    "mode": "auto"
+  },
   "languages": {
     "Nix": {
       "tab_size": 2
