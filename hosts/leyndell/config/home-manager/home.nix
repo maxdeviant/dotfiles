@@ -174,6 +174,10 @@
     # Build dependencies
     cmake
 
+    # Nickel
+    nickel
+    nls
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

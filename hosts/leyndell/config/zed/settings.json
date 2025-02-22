@@ -45,6 +45,9 @@
     }
   },
   "languages": {
+    "Nickel": {
+      "language_servers": ["nls", "..."]
+    },
     "Nix": {
       "tab_size": 2
     }
