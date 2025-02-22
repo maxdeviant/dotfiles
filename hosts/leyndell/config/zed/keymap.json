@@ -1,13 +1,13 @@
 [
   {
-    "context": "Editor",
     "bindings": {
-      "cmd-shift-k": "editor::DeleteLine",
-      "alt-up": "editor::MoveLineUp",
       "alt-down": "editor::MoveLineDown",
-      "cmd-shift-l": "editor::SelectAllMatches",
+      "alt-q": "editor::Rewrap",
+      "alt-up": "editor::MoveLineUp",
       "cmd-shift-b": "editor::ToggleGitBlame",
-      "alt-q": "editor::Rewrap"
-    }
+      "cmd-shift-k": "editor::DeleteLine",
+      "cmd-shift-l": "editor::SelectAllMatches"
+    },
+    "context": "Editor"
   }
 ]
