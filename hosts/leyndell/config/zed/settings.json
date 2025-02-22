@@ -1,55 +1,51 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "assistant": {
+    "default_model": {
+      "model": "claude-3-5-sonnet-20240620-fast-edit",
+      "provider": "zed.dev"
+    },
+    "version": "2"
+  },
   "base_keymap": "VSCode",
-  "theme": "Melange Dark",
   "buffer_font_family": "Fira Code Retina",
   "buffer_font_size": 14,
-  "ui_font_family": "Zed Plex Sans",
-  "ui_font_size": 16,
-  "format_on_save": "off",
-  "seed_search_query_from_cursor": "selection",
-  "when_closing_with_no_tabs": "keep_window_open",
-  "show_whitespaces": "boundary",
-  "project_panel": {
-    "auto_fold_dirs": false
+  "edit_predictions": {
+    "mode": "auto"
   },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "format_on_save": "off",
   "git": {
     "inline_blame": {
       "enabled": false
     }
   },
-  "tabs": {
-    "file_icons": true
-  },
   "inlay_hints": {
     "enabled": true
   },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "edit_predictions": {
-    "mode": "auto"
-  },
-  "assistant": {
-    "version": "2",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-20240620-fast-edit"
-    }
-  },
   "languages": {
     "Nickel": {
-      "language_servers": ["nls", "..."]
+      "language_servers": [
+        "nls",
+        "..."
+      ],
+      "tab_size": 2
     },
     "Nix": {
       "tab_size": 2
     }
-  }
+  },
+  "project_panel": {
+    "auto_fold_dirs": false
+  },
+  "seed_search_query_from_cursor": "selection",
+  "show_whitespaces": "boundary",
+  "tabs": {
+    "file_icons": true
+  },
+  "theme": "Melange Dark",
+  "ui_font_family": "Zed Plex Sans",
+  "ui_font_size": 16,
+  "when_closing_with_no_tabs": "keep_window_open"
 }
