@@ -43,7 +43,8 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
       language_servers = ["nls", "..."]
     },
     Nix = {
-      tab_size = 2
+      tab_size = 2,
+      language_servers = ["!nil", "!nixd", "..."]
     }
   }
 }

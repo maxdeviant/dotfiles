@@ -33,6 +33,11 @@
       "tab_size": 2
     },
     "Nix": {
+      "language_servers": [
+        "!nil",
+        "!nixd",
+        "..."
+      ],
       "tab_size": 2
     }
   },
