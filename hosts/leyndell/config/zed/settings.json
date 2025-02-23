@@ -53,6 +53,19 @@
       ]
     }
   },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "imports": {
+          "granularity": {
+            "enforce": true,
+            "group": "module"
+          },
+          "prefix": "crate"
+        }
+      }
+    }
+  },
   "project_panel": {
     "auto_fold_dirs": false
   },

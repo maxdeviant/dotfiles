@@ -52,6 +52,19 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     WIT = {
       language_servers = ["!wit", "..."]
     }
+  },
+  lsp = {
+    rust-analyzer = {
+      initialization_options = {
+        imports = {
+          prefix = "crate",
+          granularity = {
+            enforce = true,
+            group = "module"
+          }
+        }
+      }
+    }
   }
 }
   | ZedSettingsSchema
