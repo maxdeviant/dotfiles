@@ -174,6 +174,11 @@
     # Build dependencies
     cmake
 
+    # Gleam
+    gleam
+    erlang_28
+    rebar3
+
     # Nickel
     nickel
     nls

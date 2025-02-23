@@ -25,6 +25,12 @@
     "enabled": true
   },
   "languages": {
+    "Gleam": {
+      "language_servers": [
+        "gleam",
+        "..."
+      ]
+    },
     "Nickel": {
       "language_servers": [
         "nls",

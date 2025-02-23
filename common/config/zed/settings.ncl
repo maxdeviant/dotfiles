@@ -38,6 +38,9 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     }
   },
   languages = {
+    Gleam = {
+      language_servers = ["gleam", "..."]
+    },
     Nickel = {
       tab_size = 2,
       language_servers = ["nls", "..."]
