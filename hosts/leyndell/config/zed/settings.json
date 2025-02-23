@@ -45,6 +45,12 @@
         "..."
       ],
       "tab_size": 2
+    },
+    "WIT": {
+      "language_servers": [
+        "!wit",
+        "..."
+      ]
     }
   },
   "project_panel": {
