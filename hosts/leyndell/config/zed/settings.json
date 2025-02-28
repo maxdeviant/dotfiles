@@ -10,6 +10,9 @@
   "buffer_font_family": "Fira Code Retina",
   "buffer_font_size": 14,
   "edit_predictions": {
+    "disabled_globs": [
+      "*.md"
+    ],
     "mode": "auto"
   },
   "features": {
