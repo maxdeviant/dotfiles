@@ -4,6 +4,9 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
   theme = "Melange Dark",
   buffer_font_family = "Fira Code Retina",
   buffer_font_size = 14,
+  buffer_font_features = {
+    ss09 = true
+  },
   ui_font_family = "Zed Plex Sans",
   ui_font_size = 16,
   format_on_save = "off",
