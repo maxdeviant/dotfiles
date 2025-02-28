@@ -179,6 +179,9 @@
     erlang_28
     rebar3
 
+    # Node.js
+    volta
+
     # Nickel
     nickel
     nls
