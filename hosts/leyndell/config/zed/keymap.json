@@ -4,6 +4,7 @@
       "alt-down": "editor::MoveLineDown",
       "alt-q": "editor::Rewrap",
       "alt-up": "editor::MoveLineUp",
+      "alt-z": "editor::ToggleSoftWrap",
       "cmd-shift-b": "editor::ToggleGitBlame",
       "cmd-shift-k": "editor::DeleteLine",
       "cmd-shift-l": "editor::SelectAllMatches"

@@ -8,6 +8,7 @@ let { ZedKeymapSchema } = import "./keymap-schema.ncl" in
       alt-down = "editor::MoveLineDown",
       cmd-shift-l = "editor::SelectAllMatches",
       cmd-shift-b = "editor::ToggleGitBlame",
+      alt-z = "editor::ToggleSoftWrap",
       alt-q = "editor::Rewrap"
     }
   }
