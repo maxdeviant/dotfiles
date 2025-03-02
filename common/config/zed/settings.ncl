@@ -53,6 +53,11 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
       tab_size = 2,
       language_servers = ["!nil", "!nixd", "..."]
     },
+    SQL = {
+      prettier = {
+        allowed = false
+      }
+    },
     WIT = {
       language_servers = ["!wit", "..."]
     }

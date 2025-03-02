@@ -52,6 +52,11 @@
       ],
       "tab_size": 2
     },
+    "SQL": {
+      "prettier": {
+        "allowed": false
+      }
+    },
     "WIT": {
       "language_servers": [
         "!wit",

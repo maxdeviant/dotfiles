@@ -1,6 +1,7 @@
 let LanguageSettingsSchema = {
   tab_size | Number | optional,
-  language_servers | Array String | optional
+  language_servers | Array String | optional,
+  ..
 }
 in
 
