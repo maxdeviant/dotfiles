@@ -31,7 +31,7 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     edit_prediction_provider = "zed"
   },
   edit_predictions = {
-    mode = "auto",
+    mode = "subtle",
     disabled_globs = ["*.md"]
   },
   assistant = {

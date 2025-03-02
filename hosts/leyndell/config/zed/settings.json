@@ -16,7 +16,7 @@
     "disabled_globs": [
       "*.md"
     ],
-    "mode": "auto"
+    "mode": "subtle"
   },
   "features": {
     "edit_prediction_provider": "zed"
