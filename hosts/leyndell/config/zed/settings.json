@@ -52,6 +52,9 @@
       ],
       "tab_size": 2
     },
+    "Rust": {
+      "preferred_line_length": 120
+    },
     "SCSS": {
       "tab_size": 2
     },

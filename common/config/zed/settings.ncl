@@ -53,6 +53,9 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
       tab_size = 2,
       language_servers = ["!nil", "!nixd", "..."]
     },
+    Rust = {
+      preferred_line_length = 120
+    },
     SCSS = {
       tab_size = 2
     },
