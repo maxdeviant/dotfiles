@@ -30,6 +30,9 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
   features = {
     edit_prediction_provider = "zed"
   },
+  completions = {
+    words = "disabled"
+  },
   edit_predictions = {
     mode = "subtle",
     disabled_globs = ["*.md"]

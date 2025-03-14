@@ -12,6 +12,9 @@
     "ss09": true
   },
   "buffer_font_size": 14,
+  "completions": {
+    "words": "disabled"
+  },
   "edit_predictions": {
     "disabled_globs": [
       "*.md"
