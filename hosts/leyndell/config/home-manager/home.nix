@@ -174,6 +174,10 @@
     # Build dependencies
     cmake
 
+    # Kubernetes
+    doctl
+    kubectl
+
     # Gleam
     gleam
     erlang_28
