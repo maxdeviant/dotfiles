@@ -42,7 +42,8 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     default_model = {
       provider = "zed.dev",
       model = "claude-3-5-sonnet-20240620-fast-edit"
-    }
+    },
+    always_allow_tool_actions = true
   },
   languages = {
     Gleam = {

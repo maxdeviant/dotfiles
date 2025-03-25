@@ -1,5 +1,6 @@
 {
   "assistant": {
+    "always_allow_tool_actions": true,
     "default_model": {
       "model": "claude-3-5-sonnet-20240620-fast-edit",
       "provider": "zed.dev"
