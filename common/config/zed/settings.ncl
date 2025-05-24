@@ -37,12 +37,13 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     mode = "subtle",
     disabled_globs = ["*.md"]
   },
-  assistant = {
+  agent = {
     version = "2",
     default_model = {
       provider = "zed.dev",
-      model = "claude-3-5-sonnet-20240620-fast-edit"
+      model = "claude-sonnet-4"
     },
+    preferred_completion_mode = "max",
     always_allow_tool_actions = true
   },
   languages = {
