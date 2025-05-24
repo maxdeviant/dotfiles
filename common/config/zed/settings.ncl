@@ -44,7 +44,8 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
       model = "claude-sonnet-4"
     },
     preferred_completion_mode = "max",
-    always_allow_tool_actions = true
+    always_allow_tool_actions = true,
+    single_file_review = false
   },
   languages = {
     Gleam = {
