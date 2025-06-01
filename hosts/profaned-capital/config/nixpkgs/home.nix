@@ -4,6 +4,25 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Configure nixpkgs
+  nixpkgs.overlays = [
+    (final: prev: {
+      gleam = prev.gleam.overrideAttrs (oldAttrs: rec {
+        version = "1.8.1";
+        src = prev.fetchFromGitHub {
+          owner = "gleam-lang";
+          repo = "gleam";
+          rev = "v${version}";
+          hash = "sha256-Qt2VQhbiNNORrGUR5LHeBb0q/EIqPNPz/adljj6xpS4=";
+        };
+        cargoDeps = final.rustPlatform.fetchCargoVendor {
+          inherit src;
+          hash = "sha256-7oawxv1s8BJsOxGuADKjf4XqJ/UT+zYOrPQCbQljArM=";
+        };
+      });
+    })
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "maxdeviant";
