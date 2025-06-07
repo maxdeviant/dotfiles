@@ -43,7 +43,7 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
       provider = "zed.dev",
       model = "claude-sonnet-4"
     },
-    preferred_completion_mode = "max",
+    preferred_completion_mode = "burn",
     always_allow_tool_actions = true,
     single_file_review = false
   },
