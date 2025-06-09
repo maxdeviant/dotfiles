@@ -33,6 +33,7 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
   completions = {
     words = "disabled"
   },
+  go_to_definition_fallback = "none",
   edit_predictions = {
     mode = "subtle",
     disabled_globs = ["*.md"]

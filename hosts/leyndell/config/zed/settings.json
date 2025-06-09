@@ -33,6 +33,7 @@
       "enabled": false
     }
   },
+  "go_to_definition_fallback": "none",
   "inlay_hints": {
     "enabled": true
   },
