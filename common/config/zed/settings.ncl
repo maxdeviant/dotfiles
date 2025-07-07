@@ -14,7 +14,8 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
   when_closing_with_no_tabs = "keep_window_open",
   show_whitespaces = "boundary",
   project_panel = {
-    auto_fold_dirs = false
+    auto_fold_dirs = false,
+    sticky_scroll = false
   },
   git = {
     inline_blame = {

@@ -7,6 +7,7 @@ in
 
 let ProjectPanelSchema = {
   auto_fold_dirs | Bool | optional,
+  sticky_scroll | Bool | optional,
 }
 in
 

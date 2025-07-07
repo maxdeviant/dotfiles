@@ -91,7 +91,8 @@
     }
   },
   "project_panel": {
-    "auto_fold_dirs": false
+    "auto_fold_dirs": false,
+    "sticky_scroll": false
   },
   "seed_search_query_from_cursor": "selection",
   "show_whitespaces": "boundary",
