@@ -8,6 +8,7 @@ let { ZedKeymapSchema } = import "./keymap-schema.ncl" in
   {
     context = "Editor",
     bindings = {
+      "cmd-;" = null,
       cmd-shift-k = "editor::DeleteLine",
       alt-up = "editor::MoveLineUp",
       alt-down = "editor::MoveLineDown",
