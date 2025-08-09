@@ -1,6 +1,11 @@
 [
   {
     "bindings": {
+      "cmd-,": null
+    }
+  },
+  {
+    "bindings": {
       "alt-down": "editor::MoveLineDown",
       "alt-q": "editor::Rewrap",
       "alt-up": "editor::MoveLineUp",

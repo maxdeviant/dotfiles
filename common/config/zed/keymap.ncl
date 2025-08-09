@@ -1,6 +1,11 @@
 let { ZedKeymapSchema } = import "./keymap-schema.ncl" in
 [
   {
+    bindings = {
+      "cmd-," = null,
+    }
+  },
+  {
     context = "Editor",
     bindings = {
       cmd-shift-k = "editor::DeleteLine",
