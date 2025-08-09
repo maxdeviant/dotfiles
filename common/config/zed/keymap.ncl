@@ -12,7 +12,7 @@ let { ZedKeymapSchema } = import "./keymap-schema.ncl" in
       alt-up = "editor::MoveLineUp",
       alt-down = "editor::MoveLineDown",
       cmd-shift-l = "editor::SelectAllMatches",
-      cmd-shift-b = "editor::ToggleGitBlame",
+      cmd-shift-b = "git::Blame",
       alt-z = "editor::ToggleSoftWrap",
       alt-q = "editor::Rewrap"
     }
