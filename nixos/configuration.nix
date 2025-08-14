@@ -71,7 +71,7 @@
     polybar
     xorg.xdpyinfo
     xautomation
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
 
     # Applications
     alacritty
