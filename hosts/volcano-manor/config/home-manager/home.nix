@@ -167,6 +167,7 @@
     htop
     jq
     just
+    _1password-cli
     sqlx-cli
     watchexec
 
