@@ -14,3 +14,13 @@ cd ~/dotfiles/hosts/leyndell
 yes | ./install
 home-manager switch
 ```
+
+## Updating Zed settings
+
+```sh
+nickel export --format json common/config/zed/settings.ncl > hosts/leyndell/config/zed/settings.json
+```
+
+```sh
+nickel export --format json common/config/zed/keymap.ncl > hosts/leyndell/config/zed/keymap.json
+```
