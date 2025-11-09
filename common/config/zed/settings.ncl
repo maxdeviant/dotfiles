@@ -40,12 +40,10 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     disabled_globs = ["*.md"]
   },
   agent = {
-    version = "2",
     default_model = {
       provider = "zed.dev",
-      model = "claude-sonnet-4"
+      model = "claude-sonnet-4-5"
     },
-    preferred_completion_mode = "burn",
     always_allow_tool_actions = true,
     single_file_review = false
   },

@@ -2,12 +2,10 @@
   "agent": {
     "always_allow_tool_actions": true,
     "default_model": {
-      "model": "claude-sonnet-4",
+      "model": "claude-sonnet-4-5",
       "provider": "zed.dev"
     },
-    "preferred_completion_mode": "burn",
-    "single_file_review": false,
-    "version": "2"
+    "single_file_review": false
   },
   "base_keymap": "VSCode",
   "buffer_font_family": "Fira Code Retina",
