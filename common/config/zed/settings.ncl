@@ -48,6 +48,13 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     single_file_review = false
   },
   languages = {
+    GDScript = {
+      # Disable the GDScript language server, as once it has started it will
+      # report errors in any file, not just GDScript files.
+      #
+      # Tracked by https://github.com/GDQuest/zed-gdscript/issues/6.
+      language_servers = ["!gdscript", "..."]
+    },
     Gleam = {
       language_servers = ["gleam", "..."]
     },

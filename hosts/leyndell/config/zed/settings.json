@@ -36,6 +36,12 @@
     "enabled": true
   },
   "languages": {
+    "GDScript": {
+      "language_servers": [
+        "!gdscript",
+        "..."
+      ]
+    },
     "Gleam": {
       "language_servers": [
         "gleam",
