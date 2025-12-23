@@ -48,9 +48,9 @@
 
   fonts.fonts = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    noto-fonts-extra
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    noto-fonts
     fira-code
   ];
 
@@ -91,7 +91,7 @@
 
     ncmpcpp
     google-chrome
-    tdesktop
+    telegram-desktop
 
     # Haskell
     stack
@@ -163,11 +163,12 @@
   programs.fish.enable = true;
 
   programs.ssh.startAgent = true;
+  services.gnome.gcr-ssh-agent.enable = false;
 
   # Enable Postgres.
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql_13;
+    package = pkgs.postgresql_18;
   };
 
   # Enable 32-bit support for Steam.
