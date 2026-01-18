@@ -43,6 +43,8 @@ let
   vscode-with-extensions = pkgs.vscode-with-extensions.override {
     vscodeExtensions = extensions;
   };
+
+  hytale-launcher = pkgs.callPackage ./hytale-launcher.nix {};
 in
 {
   nixpkgs.overlays = [
@@ -163,6 +165,7 @@ in
     steam
     lutris
     wine
+    hytale-launcher
 
     # VPN/Remote Desktop
     remmina
