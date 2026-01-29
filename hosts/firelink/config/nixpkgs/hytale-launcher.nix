@@ -1,3 +1,5 @@
+# https://github.com/NixOS/nixpkgs/pull/479368
+
 {
   lib,
   stdenv,
@@ -23,7 +25,7 @@
 
 let
   # https://launcher.hytale.com/version/release/launcher.json
-  version = "2026.01.24-997c2cb";
+  version = "2026.01.28-6fc68ec";
 
   # TODO: add icon once a stable versioned source is available
   desktopItem = makeDesktopItem {
@@ -41,7 +43,7 @@ let
       url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-${version}.zip";
       # nix-prefetch-url --unpack https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-${version}.zip
       # nix --extra-experimental-features nix-command hash convert --to sri "sha256:<hash>"
-      hash = "sha256-p+x+dNEhMDnjVpyzrczxP/KiYkFrbU8sqbIvwtuEN80=";
+      hash = "sha256-F46outZwTxjfaUTbi1ZYNhjKTQWFlfKDymG7RdnC7gQ=";
     };
     aarch64-darwin = {
       url = "https://launcher.hytale.com/builds/release/darwin/arm64/hytale-launcher-${version}.zip";
