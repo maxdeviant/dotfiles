@@ -20,10 +20,8 @@
     "disabled_globs": [
       "*.md"
     ],
-    "mode": "subtle"
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
+    "mode": "subtle",
+    "provider": "zed"
   },
   "format_on_save": "off",
   "git": {

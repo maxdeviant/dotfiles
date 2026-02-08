@@ -28,14 +28,12 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
   inlay_hints = {
     enabled = true
   },
-  features = {
-    edit_prediction_provider = "zed"
-  },
   completions = {
     words = "disabled"
   },
   go_to_definition_fallback = "none",
   edit_predictions = {
+    provider = "zed",
     mode = "subtle",
     disabled_globs = ["*.md"]
   },
