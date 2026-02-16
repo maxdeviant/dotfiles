@@ -47,6 +47,10 @@
       set -gx VOLTA_HOME "$HOME/.volta"
       set -gx PATH $PATH "$VOLTA_HOME/bin"
 
+      # Use a newer version of Clang.
+      fish_add_path ~/llvm/LLVM-21.1.8-macOS-ARM64/bin
+      set -gx BINDGEN_EXTRA_CLANG_ARGS "--sysroot=$(xcrun --show-sdk-path)"
+
       function gll
         git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'
       end
