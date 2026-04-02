@@ -6,8 +6,24 @@ let LanguageSettingsSchema = {
 in
 
 let ProjectPanelSchema = {
+  dock | String | optional,
   auto_fold_dirs | Bool | optional,
   sticky_scroll | Bool | optional,
+}
+in
+
+let GitPanelSchema = {
+  dock | String | optional,
+}
+in
+
+let CollaborationPanelSchema = {
+  dock | String | optional,
+}
+in
+
+let OutlinePanelSchema = {
+  dock | String | optional,
 }
 in
 
@@ -23,6 +39,9 @@ in
     when_closing_with_no_tabs | String | optional,
     show_whitespaces | String | optional,
     project_panel | ProjectPanelSchema | optional,
+    git_panel | GitPanelSchema | optional,
+    collaboration_panel | CollaborationPanelSchema | optional,
+    outline_panel | OutlinePanelSchema | optional,
     tabs | { file_icons | Bool | optional } | optional,
     inlay_hints | { enabled | Bool | optional } | optional,
     languages | { _ : LanguageSettingsSchema } | optional,

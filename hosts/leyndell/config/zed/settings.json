@@ -5,6 +5,7 @@
       "model": "claude-sonnet-4-5",
       "provider": "zed.dev"
     },
+    "dock": "right",
     "single_file_review": false
   },
   "base_keymap": "VSCode",
@@ -13,6 +14,9 @@
     "ss09": true
   },
   "buffer_font_size": 14,
+  "collaboration_panel": {
+    "dock": "left"
+  },
   "completions": {
     "words": "disabled"
   },
@@ -28,6 +32,9 @@
     "inline_blame": {
       "enabled": false
     }
+  },
+  "git_panel": {
+    "dock": "left"
   },
   "go_to_definition_fallback": "none",
   "inlay_hints": {
@@ -92,8 +99,12 @@
       }
     }
   },
+  "outline_panel": {
+    "dock": "left"
+  },
   "project_panel": {
     "auto_fold_dirs": false,
+    "dock": "left",
     "sticky_scroll": false
   },
   "seed_search_query_from_cursor": "selection",

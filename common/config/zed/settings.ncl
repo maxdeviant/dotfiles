@@ -14,8 +14,18 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
   when_closing_with_no_tabs = "keep_window_open",
   show_whitespaces = "boundary",
   project_panel = {
+    dock = "left",
     auto_fold_dirs = false,
     sticky_scroll = false
+  },
+  git_panel = {
+    dock = "left",
+  },
+  collaboration_panel = {
+    dock = "left",
+  },
+  outline_panel = {
+    dock = "left",
   },
   git = {
     inline_blame = {
@@ -38,6 +48,7 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     disabled_globs = ["*.md"]
   },
   agent = {
+    dock = "right",
     default_model = {
       provider = "zed.dev",
       model = "claude-sonnet-4-5"
