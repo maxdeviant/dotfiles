@@ -12,6 +12,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidiaPackages.legacy_580 ];
+
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
@@ -80,7 +82,7 @@
     git
     htop
     maim
-    neofetch
+    fastfetch
     neovim
     pavucontrol
     pciutils
@@ -143,6 +145,8 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+
     # We want the proprietary drivers.
     open = false;
 
