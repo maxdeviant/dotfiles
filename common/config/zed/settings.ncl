@@ -91,6 +91,9 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
         allowed = false
       }
     },
+    WGSL = {
+      language_servers = ["!glasgow", "..."]
+    },
     WIT = {
       language_servers = ["!wit", "..."]
     }
