@@ -10,6 +10,7 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
   ui_font_family = "Zed Plex Sans",
   ui_font_size = 16,
   format_on_save = "off",
+  cli_default_open_behavior = "new_window",
   seed_search_query_from_cursor = "selection",
   when_closing_with_no_tabs = "keep_window_open",
   show_whitespaces = "boundary",
