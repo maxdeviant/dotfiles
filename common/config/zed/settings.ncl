@@ -52,9 +52,10 @@ let { ZedSettingsSchema } = import "./settings-schema.ncl" in
     dock = "right",
     default_model = {
       provider = "zed.dev",
-      model = "claude-sonnet-4-5"
+      model = "claude-opus-4-8",
+      enable_thinking = true,
+      effort = "medium"
     },
-    always_allow_tool_actions = true,
     single_file_review = false
   },
   languages = {
