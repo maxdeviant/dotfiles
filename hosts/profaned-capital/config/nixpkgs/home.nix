@@ -66,6 +66,7 @@
       set -e fish_function_path[1]
 
       set -gx PATH $PATH "$HOME/.cargo/bin"
+      set -gx PATH $PATH "$HOME/.local/bin"
 
       set -gx VOLTA_HOME "$HOME/.volta"
       set -gx PATH $PATH "$VOLTA_HOME/bin"
