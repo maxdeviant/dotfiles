@@ -1,10 +1,15 @@
 # The user half of Cinnamon: settings that would otherwise be clicked through
 # System Settings and live only in this machine's dconf database. The system
 # half is in modules/nixos/desktops/cinnamon.nix.
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   cfg = config.maxdeviant;
+
+  # Cinnamon formats this with GLib, not strftime. `%-d` avoids the padding
+  # space `%e` adds on single-digit days; `%P` is a lowercase am/pm.
+  # Renders as e.g. "Fri Sep 25 06:44pm".
+  clockFormat = "%a %b %-d %I:%M%P";
 in
 {
   config = lib.mkIf (cfg.roles.desktop && cfg.desktopEnvironment == "cinnamon") {
@@ -23,5 +28,27 @@ in
       tile-enabled = false;
       switch-enabled = false;
     };
+
+    # Panel clock -> Configure -> Use a custom date format.
+    #
+    # Applet settings aren't in dconf: each applet instance has a JSON file
+    # that Cinnamon owns, carrying the settings schema alongside the values and
+    # rewriting it when the applet is upgraded. A read-only store symlink would
+    # break that, so patch the values in place instead. The glob covers
+    # whatever instance ID the clock has; on a fresh install the file doesn't
+    # exist until Cinnamon's first login, so it takes a second switch to apply.
+    home.activation.cinnamonClockFormat = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      for file in "${config.xdg.configHome}"/cinnamon/spices/calendar@cinnamon.org/*.json; do
+        [ -e "$file" ] || continue
+        patched=$(mktemp)
+        ${lib.getExe pkgs.jq} --indent 4 --arg format ${lib.escapeShellArg clockFormat} \
+          '."use-custom-format".value = true | ."custom-format".value = $format' \
+          "$file" > "$patched"
+        if ! cmp -s "$patched" "$file"; then
+          run cp "$patched" "$file"
+        fi
+        rm "$patched"
+      done
+    '';
   };
 }
