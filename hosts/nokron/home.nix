@@ -15,7 +15,7 @@ in
   # to them. Regenerate after editing the Nickel sources:
   #
   #   nickel export --format json hosts/nokron/config/zed/settings.ncl > hosts/nokron/config/zed/settings.json
-  #   nickel export --format json common/config/zed/keymap.ncl > hosts/nokron/config/zed/keymap.json
+  #   nickel export --format json common/config/zed/keymap-linux.ncl > hosts/nokron/config/zed/keymap.json
   #
   # Changes Zed makes to the JSON are overwritten by the next export, so port
   # anything worth keeping back to the Nickel.

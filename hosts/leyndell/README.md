@@ -22,5 +22,5 @@ nickel export --format json common/config/zed/settings.ncl > hosts/leyndell/conf
 ```
 
 ```sh
-nickel export --format json common/config/zed/keymap.ncl > hosts/leyndell/config/zed/keymap.json
+nickel export --format json common/config/zed/keymap-macos.ncl > hosts/leyndell/config/zed/keymap.json
 ```
