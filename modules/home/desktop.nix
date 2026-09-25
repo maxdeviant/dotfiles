@@ -1,5 +1,5 @@
-# The user half of the desktop role. The system half -- X, lightdm, Cinnamon,
-# fonts -- is in modules/nixos/desktop.nix.
+# The user half of the desktop role. The system half -- X, lightdm, fonts -- is
+# in modules/nixos/desktop.nix.
 { config, lib, pkgs, ... }:
 
 let
