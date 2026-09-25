@@ -8,27 +8,20 @@
   lib,
   rustPlatform,
   fetchFromGitHub,
-  pkg-config,
-  openssl,
 }:
 
 rustPlatform.buildRustPackage rec {
   pname = "code-stats-ls";
-  version = "0.4.5";
+  version = "0.5.0";
 
   src = fetchFromGitHub {
     owner = "maxdeviant";
     repo = "code-stats-ls";
     rev = "v${version}";
-    hash = "sha256-BLuI+u9+dIiDs4z4E7yTNL/yGUI5uyUkfI5PlNte9nA=";
+    hash = "sha256-MY3a+rgCq1UzrFQ4ZkKaU88BGK4lYbZEwwIvOMJDl2M=";
   };
 
-  cargoHash = "sha256-efpE9yg0BHI5JKNJWLJTUtAsMaG2KuqOjw2p65WoXHg=";
-
-  # reqwest keeps its default features, so native-tls (and so OpenSSL) is
-  # linked in alongside rustls.
-  nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ openssl ];
+  cargoHash = "sha256-BKdAXgaoRWL9bCBxRlq1GC5ee7UZAHdAKQIwjm/dNe4=";
 
   meta = {
     description = "A language server for Code::Stats";
