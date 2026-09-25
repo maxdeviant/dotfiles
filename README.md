@@ -15,6 +15,9 @@ Here is a breakdown of the structure of the repository:
   - [`ringed-city`](./hosts/ringed-city) is my work MacBook running macOS (with Nix)
 - [`nixos`](./nixos) contains my NixOS configuration
   - This is currently based on `firelink` but will eventually be made system-agnostic
+- [`docs`](./docs) contains guides for setup that can't be captured declaratively
+  - [Battle.net](./docs/battle-net.md)
+  - [RuneLite](./docs/runelite.md)
 
 ## Installation
 
