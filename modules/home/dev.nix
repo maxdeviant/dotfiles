@@ -22,6 +22,7 @@ in
 
       # Rust
       rustup
+      gcc
     ];
   };
 }
