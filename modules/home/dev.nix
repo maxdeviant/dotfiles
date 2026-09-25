@@ -16,7 +16,6 @@ in
       ripgrep
       tree
       watchexec
-      zed-editor
 
       claude-code
 

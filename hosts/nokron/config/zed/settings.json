@@ -1,0 +1,130 @@
+{
+  "agent": {
+    "default_model": {
+      "effort": "medium",
+      "enable_thinking": true,
+      "model": "claude-opus-4-8",
+      "provider": "zed.dev"
+    },
+    "dock": "right",
+    "single_file_review": false
+  },
+  "base_keymap": "VSCode",
+  "buffer_font_family": "Fira Code",
+  "buffer_font_features": {
+    "ss09": true
+  },
+  "buffer_font_size": 14,
+  "cli_default_open_behavior": "new_window",
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "completions": {
+    "words": "disabled"
+  },
+  "edit_predictions": {
+    "disabled_globs": [
+      "*.md"
+    ],
+    "mode": "subtle",
+    "provider": "zed"
+  },
+  "format_on_save": "off",
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "go_to_definition_fallback": "none",
+  "inlay_hints": {
+    "enabled": true
+  },
+  "languages": {
+    "GDScript": {
+      "language_servers": [
+        "!gdscript",
+        "..."
+      ]
+    },
+    "Gleam": {
+      "language_servers": [
+        "gleam",
+        "..."
+      ]
+    },
+    "Nickel": {
+      "language_servers": [
+        "nls",
+        "..."
+      ],
+      "tab_size": 2
+    },
+    "Nix": {
+      "language_servers": [
+        "!nil",
+        "!nixd",
+        "..."
+      ],
+      "tab_size": 2
+    },
+    "Plain Text": {
+      "show_edit_predictions": false
+    },
+    "Rust": {
+      "preferred_line_length": 120
+    },
+    "SCSS": {
+      "tab_size": 2
+    },
+    "SQL": {
+      "prettier": {
+        "allowed": false
+      }
+    },
+    "WGSL": {
+      "language_servers": [
+        "!glasgow",
+        "..."
+      ]
+    },
+    "WIT": {
+      "language_servers": [
+        "!wit",
+        "..."
+      ]
+    }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "imports": {
+          "granularity": {
+            "enforce": true,
+            "group": "module"
+          },
+          "prefix": "crate"
+        }
+      }
+    }
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "auto_fold_dirs": false,
+    "dock": "left",
+    "sticky_scroll": false
+  },
+  "seed_search_query_from_cursor": "selection",
+  "show_whitespaces": "boundary",
+  "tabs": {
+    "file_icons": true
+  },
+  "theme": "Melange Dark",
+  "ui_font_family": "Zed Plex Sans",
+  "ui_font_size": 16,
+  "when_closing_with_no_tabs": "keep_window_open"
+}

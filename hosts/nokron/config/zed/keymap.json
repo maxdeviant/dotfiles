@@ -1,0 +1,20 @@
+[
+  {
+    "bindings": {
+      "cmd-,": null
+    }
+  },
+  {
+    "bindings": {
+      "alt-down": "editor::MoveLineDown",
+      "alt-q": "editor::Rewrap",
+      "alt-up": "editor::MoveLineUp",
+      "alt-z": "editor::ToggleSoftWrap",
+      "cmd-;": null,
+      "cmd-shift-b": "git::Blame",
+      "cmd-shift-k": "editor::DeleteLine",
+      "cmd-shift-l": "editor::SelectAllMatches"
+    },
+    "context": "Editor"
+  }
+]

@@ -8,6 +8,7 @@
     ./desktop.nix
     ./desktops/cinnamon.nix
     ./dev.nix
+    ./zed.nix
     ./gaming.nix
   ];
 }
