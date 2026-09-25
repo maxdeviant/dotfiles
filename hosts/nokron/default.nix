@@ -14,7 +14,7 @@
   maxdeviant.roles = {
     desktop = true;
     dev = true;
-    gaming = false;
+    gaming = true;
   };
 
   home-manager.users.${config.maxdeviant.identity.username}.imports = [ ./home.nix ];
