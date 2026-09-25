@@ -29,6 +29,16 @@ in
       switch-enabled = false;
     };
 
+    # System Settings -> Keyboard -> Shortcuts -> System -> Screenshots and
+    # Recording -> Copy a screenshot of an area to clipboard.
+    #
+    # Adds Super+Shift+S, carried over from firelink's sxhkd setup, alongside
+    # the default. dconf replaces the whole list, so the default is restated.
+    dconf.settings."org/cinnamon/desktop/keybindings/media-keys".area-screenshot-clip = [
+      "<Control><Shift>Print"
+      "<Super><Shift>s"
+    ];
+
     # Panel clock -> Configure -> Use a custom date format.
     #
     # Applet settings aren't in dconf: each applet instance has a JSON file
