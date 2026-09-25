@@ -9,6 +9,7 @@ in
   config = lib.mkIf cfg.roles.desktop {
     home.packages = with pkgs; [
       google-chrome
+      discord
 
       feh
       maim
