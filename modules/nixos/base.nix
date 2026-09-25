@@ -17,9 +17,34 @@ in
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   nix.channel.enable = false;
 
+  # Old generations accumulate in two places, and each needs its own limit.
+  # Every generation keeps its closure alive in the store, so collect the old
+  # ones on a schedule...
+  #
+  # This uses nh rather than nix.gc, whose only option is an age cutoff:
+  # `--delete-older-than 30d` after a month without a rebuild leaves just the
+  # current generation, with nothing to roll back to. nh keeps the union of
+  # "the last N" and "anything from the last 30 days" instead.
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      dates = "weekly";
+      extraArgs = "--keep 10 --keep-since 30d";
+    };
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # ...and every generation with a distinct kernel copies its kernel and initrd
+  # into the 1G /boot partition, which linuxPackages_latest churns through
+  # quickly. A full /boot makes `nixos-rebuild switch` fail outright, and since
+  # entries are only pruned during a switch, it can't fix itself. Cap the menu
+  # well before that. Older generations just drop off the boot menu; they stay
+  # in the store until the GC above removes them.
+  boot.loader.systemd-boot.configurationLimit = 10;
 
   networking.networkmanager.enable = true;
 
