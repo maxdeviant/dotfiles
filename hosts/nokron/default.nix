@@ -19,6 +19,10 @@
 
   maxdeviant.desktopEnvironment = "cinnamon";
 
+  # Smaller than the shared default because Cinnamon's 1.5 text scaling factor
+  # (see modules/home/desktops/cinnamon.nix) also enlarges the terminal.
+  maxdeviant.theme.font.size = 14;
+
   home-manager.users.${config.maxdeviant.identity.username}.imports = [ ./home.nix ];
 
   # The first version of NixOS installed on this machine. This is not a "which
