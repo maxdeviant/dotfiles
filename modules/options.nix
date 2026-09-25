@@ -37,7 +37,10 @@
       font = {
         monospace = lib.mkOption {
           type = lib.types.str;
-          default = "Fira Code Retina";
+          # Not "Fira Code Retina": nixpkgs' fira-code ships only the variable
+          # font, which has no Retina family, so fontconfig would fall back to
+          # a proportional font.
+          default = "Fira Code";
           description = "Monospace font family, used by the terminal.";
         };
 
