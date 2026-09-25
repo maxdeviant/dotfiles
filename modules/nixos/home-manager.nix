@@ -30,7 +30,7 @@ in
       # Mirror the evaluated values across the system/home boundary. Home
       # modules read config.maxdeviant.* exactly like system modules do, rather
       # than reaching into `osConfig`, which would tie them to NixOS.
-      maxdeviant = { inherit (cfg) identity theme roles; };
+      maxdeviant = { inherit (cfg) identity theme roles desktopEnvironment; };
     };
   };
 }

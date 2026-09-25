@@ -6,6 +6,7 @@
     ./starship.nix
     ./terminal.nix
     ./desktop.nix
+    ./desktops/cinnamon.nix
     ./dev.nix
     ./gaming.nix
   ];

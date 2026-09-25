@@ -85,5 +85,14 @@
       dev = lib.mkEnableOption "development tooling";
       gaming = lib.mkEnableOption "games and their runtimes";
     };
+
+    # Which desktop environment or window manager the desktop role runs. Each
+    # value maps to a pair of modules under modules/{nixos,home}/desktops/, so
+    # switching is a one-line change that carries each DE's settings with it.
+    desktopEnvironment = lib.mkOption {
+      type = lib.types.nullOr (lib.types.enum [ "cinnamon" ]);
+      default = null;
+      description = "Desktop environment used when the desktop role is enabled.";
+    };
   };
 }

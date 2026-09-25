@@ -1,6 +1,7 @@
-# The system half of the desktop role: X, the display manager, the session, and
-# fonts. The user half -- terminal, browser, screenshot tooling -- lives in
-# modules/home/terminal.nix and modules/home/desktop.nix.
+# The system half of the desktop role: X, the display manager, and fonts. The
+# desktop environment itself comes from modules/nixos/desktops/, picked by
+# maxdeviant.desktopEnvironment. The user half -- terminal, browser, screenshot
+# tooling -- lives in modules/home/terminal.nix and modules/home/desktop.nix.
 { config, lib, pkgs, ... }:
 
 let
@@ -12,11 +13,13 @@ in
     services.xserver.xkb.layout = "us";
 
     services.xserver.displayManager.lightdm.enable = true;
-    services.xserver.desktopManager.cinnamon.enable = true;
 
-    # Note the path: this moved out from under services.xserver. The old
-    # spelling still resolves through a renamed-option alias, but warns.
-    services.displayManager.defaultSession = "cinnamon";
+    assertions = [
+      {
+        assertion = cfg.desktopEnvironment != null;
+        message = "maxdeviant.roles.desktop requires maxdeviant.desktopEnvironment to be set.";
+      }
+    ];
 
     # Needed system-wide rather than per-user so that the display manager and
     # other pre-login surfaces can render in it.

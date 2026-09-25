@@ -17,6 +17,8 @@
     gaming = true;
   };
 
+  maxdeviant.desktopEnvironment = "cinnamon";
+
   home-manager.users.${config.maxdeviant.identity.username}.imports = [ ./home.nix ];
 
   # The first version of NixOS installed on this machine. This is not a "which
