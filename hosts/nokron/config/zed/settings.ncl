@@ -4,4 +4,9 @@
 & {
   # "Fira Code Retina" doesn't exist on NixOS; see modules/options.nix.
   buffer_font_family | force = "Fira Code",
+
+  auto_install_extensions = {
+    # Its language server comes from pkgs/code-stats-ls.nix.
+    code-stats = true,
+  },
 }

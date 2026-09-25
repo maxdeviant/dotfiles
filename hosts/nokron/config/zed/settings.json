@@ -9,6 +9,9 @@
     "dock": "right",
     "single_file_review": false
   },
+  "auto_install_extensions": {
+    "code-stats": true
+  },
   "base_keymap": "VSCode",
   "buffer_font_family": "Fira Code",
   "buffer_font_features": {

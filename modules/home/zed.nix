@@ -19,6 +19,10 @@ in
         ln -s ${zed-editor}/bin/zeditor $out/bin/zed
       '')
 
+      # For the Code::Stats extension, which uses this from PATH rather than
+      # downloading a binary that can't run on NixOS.
+      (callPackage ../../pkgs/code-stats-ls.nix { })
+
       # For exporting the Zed settings from common/config/zed/.
       nickel
     ];
