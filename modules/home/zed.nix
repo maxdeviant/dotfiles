@@ -11,6 +11,14 @@ in
     home.packages = with pkgs; [
       zed-editor
 
+      # nixpkgs names the CLI `zeditor`, to avoid clashing with an older `zed`.
+      # A real binary rather than a shell alias, so it also works in scripts
+      # and as $EDITOR.
+      (runCommand "zed-alias" { } ''
+        mkdir -p $out/bin
+        ln -s ${zed-editor}/bin/zeditor $out/bin/zed
+      '')
+
       # For exporting the Zed settings from common/config/zed/.
       nickel
     ];
