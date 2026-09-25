@@ -19,6 +19,9 @@ in
       zed-editor
 
       claude-code
+
+      # Rust
+      rustup
     ];
   };
 }
