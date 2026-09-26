@@ -10,6 +10,7 @@ in
     home.packages = with pkgs; [
       google-chrome
       discord
+      spotify
 
       feh
       maim
