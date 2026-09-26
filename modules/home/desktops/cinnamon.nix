@@ -10,6 +10,25 @@ let
   # space `%e` adds on single-digit days; `%P` is a lowercase am/pm.
   # Renders as e.g. "Fri Sep 25 06:44pm".
   clockFormat = "%a %b %-d %I:%M%P";
+
+  # Applet settings aren't in dconf: each applet instance has a JSON file that
+  # Cinnamon owns, carrying the settings schema alongside the values and
+  # rewriting it when the applet is upgraded. A read-only store symlink would
+  # break that, so patch the values in place instead. The glob covers whatever
+  # instance ID the applet has; on a fresh install the file doesn't exist until
+  # Cinnamon's first login, so it takes a second switch to apply.
+  patchAppletSettings = uuid: jqArgs: filter: ''
+    for file in "${config.xdg.configHome}"/cinnamon/spices/${uuid}/*.json; do
+      [ -e "$file" ] || continue
+      patched=$(mktemp)
+      ${lib.getExe pkgs.jq} --indent 4 ${jqArgs} ${lib.escapeShellArg filter} \
+        "$file" > "$patched"
+      if ! cmp -s "$patched" "$file"; then
+        run cp "$patched" "$file"
+      fi
+      rm "$patched"
+    done
+  '';
 in
 {
   config = lib.mkIf (cfg.roles.desktop && cfg.desktopEnvironment == "cinnamon") {
@@ -40,25 +59,16 @@ in
     ];
 
     # Panel clock -> Configure -> Use a custom date format.
+    home.activation.cinnamonClockFormat = lib.hm.dag.entryAfter [ "writeBoundary" ]
+      (patchAppletSettings "calendar@cinnamon.org"
+        "--arg format ${lib.escapeShellArg clockFormat}"
+        ''."use-custom-format".value = true | ."custom-format".value = $format'');
+
+    # Panel sound -> Configure -> Show menu.
     #
-    # Applet settings aren't in dconf: each applet instance has a JSON file
-    # that Cinnamon owns, carrying the settings schema alongside the values and
-    # rewriting it when the applet is upgraded. A read-only store symlink would
-    # break that, so patch the values in place instead. The glob covers
-    # whatever instance ID the clock has; on a fresh install the file doesn't
-    # exist until Cinnamon's first login, so it takes a second switch to apply.
-    home.activation.cinnamonClockFormat = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      for file in "${config.xdg.configHome}"/cinnamon/spices/calendar@cinnamon.org/*.json; do
-        [ -e "$file" ] || continue
-        patched=$(mktemp)
-        ${lib.getExe pkgs.jq} --indent 4 --arg format ${lib.escapeShellArg clockFormat} \
-          '."use-custom-format".value = true | ."custom-format".value = $format' \
-          "$file" > "$patched"
-        if ! cmp -s "$patched" "$file"; then
-          run cp "$patched" "$file"
-        fi
-        rm "$patched"
-      done
-    '';
+    # Defaults to Super+Shift+S, which collides with the screenshot binding
+    # above; whichever Cinnamon registers last wins. Unbind it.
+    home.activation.cinnamonSoundMenuKey = lib.hm.dag.entryAfter [ "writeBoundary" ]
+      (patchAppletSettings "sound@cinnamon.org" "" ''.keyOpen.value = ""'');
   };
 }
