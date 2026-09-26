@@ -3,6 +3,7 @@
     ./base.nix
     ./shell.nix
     ./git.nix
+    ./ssh.nix
     ./starship.nix
     ./terminal.nix
     ./desktop.nix
