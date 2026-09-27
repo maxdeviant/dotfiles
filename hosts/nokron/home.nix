@@ -23,4 +23,9 @@ in
     "zed/settings.json".source = link "hosts/nokron/config/zed/settings.json";
     "zed/keymap.json".source = link "hosts/nokron/config/zed/keymap.json";
   };
+
+  # Also linked to the checkout, since Claude Code writes to it (e.g., `/model`
+  # and `/config`). The `PostToolUse` hook records XP for Claude Code's edits
+  # through the `code-stats-ls` from modules/home/zed.nix.
+  home.file.".claude/settings.json".source = link "hosts/nokron/config/claude/settings.json";
 }

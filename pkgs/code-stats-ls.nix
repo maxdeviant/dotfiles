@@ -12,16 +12,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "code-stats-ls";
-  version = "0.5.0";
+  version = "0.6.0";
 
   src = fetchFromGitHub {
     owner = "maxdeviant";
     repo = "code-stats-ls";
     rev = "v${version}";
-    hash = "sha256-MY3a+rgCq1UzrFQ4ZkKaU88BGK4lYbZEwwIvOMJDl2M=";
+    hash = "sha256-E0dgVbZxSGlrYwJtrBg99Opftw3zSF60KvsRJhLRxH8=";
   };
 
-  cargoHash = "sha256-BKdAXgaoRWL9bCBxRlq1GC5ee7UZAHdAKQIwjm/dNe4=";
+  cargoHash = "sha256-J24RUH+0UpigXNEamQeOuCI2Pa+pjr8W3eRZag2ihnc=";
 
   meta = {
     description = "A language server for Code::Stats";

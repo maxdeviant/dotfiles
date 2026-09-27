@@ -1,0 +1,12 @@
+{
+  "theme": "dark",
+  "model": "opus",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [{ "type": "command", "command": "code-stats-ls hook" }]
+      }
+    ]
+  }
+}
