@@ -12,6 +12,7 @@ let
   clockFormat = "%a %b %-d %I:%M%P";
 
   playerctl = lib.getExe pkgs.playerctl;
+  alacritty = lib.getExe config.programs.alacritty.package;
 
   # Applet settings aren't in dconf: each applet instance has a JSON file that
   # Cinnamon owns, carrying the settings schema alongside the values and
@@ -71,14 +72,28 @@ in
       previous = [ ];
     };
 
+    # System Settings -> Keyboard -> Shortcuts -> Launchers -> Launch terminal.
+    #
+    # Ctrl+Alt+T opens GNOME Terminal; Alacritty gets its own binding below.
+    dconf.settings."org/cinnamon/desktop/keybindings/media-keys".terminal = [ ];
+
     # System Settings -> Keyboard -> Shortcuts -> Custom Shortcuts.
     #
     # Cinnamon only picks up entries named in `custom-list`.
     dconf.settings."org/cinnamon/desktop/keybindings".custom-list = [
+      "alacritty"
       "spotify-play-pause"
       "spotify-next"
       "spotify-previous"
     ];
+    # Launched from a keybinding, the new window carries the keypress's
+    # timestamp, so the "smart" focus-new-windows policy lets it take focus.
+    # Launched other ways, it can open behind the focused window.
+    dconf.settings."org/cinnamon/desktop/keybindings/custom-keybindings/alacritty" = {
+      name = "Alacritty";
+      command = alacritty;
+      binding = [ "<Super>Return" ];
+    };
     dconf.settings."org/cinnamon/desktop/keybindings/custom-keybindings/spotify-play-pause" = {
       name = "Spotify: Play/Pause";
       command = "${playerctl} --player=spotify play-pause";
