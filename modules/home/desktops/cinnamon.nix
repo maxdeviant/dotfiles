@@ -11,6 +11,8 @@ let
   # Renders as e.g. "Fri Sep 25 06:44pm".
   clockFormat = "%a %b %-d %I:%M%P";
 
+  playerctl = lib.getExe pkgs.playerctl;
+
   # Applet settings aren't in dconf: each applet instance has a JSON file that
   # Cinnamon owns, carrying the settings schema alongside the values and
   # rewriting it when the applet is upgraded. A read-only store symlink would
@@ -57,6 +59,41 @@ in
       "<Control><Shift>Print"
       "<Super><Shift>s"
     ];
+
+    # Media keys drive Spotify.
+    #
+    # Cinnamon's own bindings go to whichever player the sound applet has
+    # selected, which can be a browser tab instead. Unbind them so the custom
+    # bindings below, which name Spotify explicitly, get the keys.
+    dconf.settings."org/cinnamon/desktop/keybindings/media-keys" = {
+      play = [ ];
+      next = [ ];
+      previous = [ ];
+    };
+
+    # System Settings -> Keyboard -> Shortcuts -> Custom Shortcuts.
+    #
+    # Cinnamon only picks up entries named in `custom-list`.
+    dconf.settings."org/cinnamon/desktop/keybindings".custom-list = [
+      "spotify-play-pause"
+      "spotify-next"
+      "spotify-previous"
+    ];
+    dconf.settings."org/cinnamon/desktop/keybindings/custom-keybindings/spotify-play-pause" = {
+      name = "Spotify: Play/Pause";
+      command = "${playerctl} --player=spotify play-pause";
+      binding = [ "XF86AudioPlay" ];
+    };
+    dconf.settings."org/cinnamon/desktop/keybindings/custom-keybindings/spotify-next" = {
+      name = "Spotify: Next";
+      command = "${playerctl} --player=spotify next";
+      binding = [ "XF86AudioNext" ];
+    };
+    dconf.settings."org/cinnamon/desktop/keybindings/custom-keybindings/spotify-previous" = {
+      name = "Spotify: Previous";
+      command = "${playerctl} --player=spotify previous";
+      binding = [ "XF86AudioPrev" ];
+    };
 
     # Panel clock -> Configure -> Use a custom date format.
     home.activation.cinnamonClockFormat = lib.hm.dag.entryAfter [ "writeBoundary" ]
