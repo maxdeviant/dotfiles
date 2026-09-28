@@ -22,6 +22,9 @@ in
       # Rust
       rustup
       gcc
+
+      # Python
+      python3
     ];
   };
 }
