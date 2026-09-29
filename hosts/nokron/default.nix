@@ -38,6 +38,12 @@
     })
   ];
 
+  # The 9070 XT's display engine has hung here ("flip_done timed out"), which
+  # takes the TTYs down with it since switching VTs needs a modeset on the same
+  # hung pipe. NixOS only allows the sync SysRq by default; enable all of them
+  # so Alt+SysRq+REISUB can still reboot cleanly.
+  boot.kernel.sysctl."kernel.sysrq" = 1;
+
   home-manager.users.${config.maxdeviant.identity.username}.imports = [ ./home.nix ];
 
   # The first version of NixOS installed on this machine. This is not a "which
