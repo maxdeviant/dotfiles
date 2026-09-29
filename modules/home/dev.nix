@@ -10,7 +10,6 @@ in
       cloc
       fastfetch
       graphviz
-      htop
       jq
       just
       ripgrep

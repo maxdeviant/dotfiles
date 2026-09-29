@@ -1,6 +1,6 @@
 # Home configuration specific to nokron. Anything portable belongs in
 # modules/home/ instead, so the other hosts can pick it up later.
-{ config, ... }:
+{ config, pkgs, ... }:
 
 let
   # mkOutOfStoreSymlink needs the path to the live checkout: a relative path
@@ -9,7 +9,9 @@ let
   link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
 in
 {
-  home.packages = [ ];
+  home.packages = with pkgs; [
+    amdgpu_top
+  ];
 
   # Linked to the checkout rather than the store so that Zed can still write
   # to them. Regenerate after editing the Nickel sources:

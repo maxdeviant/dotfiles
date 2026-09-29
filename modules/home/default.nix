@@ -2,6 +2,7 @@
   imports = [
     ./base.nix
     ./shell.nix
+    ./monitoring.nix
     ./git.nix
     ./ssh.nix
     ./starship.nix
