@@ -44,6 +44,14 @@ in
     # in hosts/nokron/default.nix is chosen with this factor applied.
     dconf.settings."org/cinnamon/desktop/interface".text-scaling-factor = 1.5;
 
+    # System Settings -> General -> Disable compositing for full-screen windows.
+    #
+    # Off by default on X11, so Muffin copies every frame of a fullscreen game
+    # and vsyncs it a second time on top of the game's own vsync. At 4K60 a
+    # frame that lands a hair late then waits out an extra refresh, and Elden
+    # Ring dipped under 60 on nokron with GPU headroom to spare.
+    dconf.settings."org/cinnamon/muffin".unredirect-fullscreen-windows = true;
+
     # System Settings -> Sound -> Sounds.
     dconf.settings."org/cinnamon/sounds" = {
       notification-enabled = false;
