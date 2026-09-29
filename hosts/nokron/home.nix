@@ -13,6 +13,13 @@ in
     amdgpu_top
   ];
 
+  # btop only reads AMD GPUs through rocm-smi, which nixpkgs leaves out unless
+  # asked. The GPU boxes are hidden by default; gpu0 is the 9070 XT.
+  programs.btop = {
+    package = pkgs.btop.override { rocmSupport = true; };
+    settings.shown_boxes = "cpu mem net proc gpu0";
+  };
+
   # Linked to the checkout rather than the store so that Zed can still write
   # to them. Regenerate after editing the Nickel sources:
   #
