@@ -10,6 +10,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Claude Code updates faster than it lands in nixpkgs, so we pull it from a
+    # dedicated flake that tracks upstream releases. Bump it on its own with
+    # `nix flake update claude-code`.
+    claude-code = {
+      url = "github:sadjow/claude-code-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

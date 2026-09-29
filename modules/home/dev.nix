@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 let
   cfg = config.maxdeviant;
@@ -17,7 +17,7 @@ in
       tree
       watchexec
 
-      claude-code
+      inputs.claude-code.packages.${pkgs.stdenv.hostPlatform.system}.claude-code
 
       # Rust
       rustup
