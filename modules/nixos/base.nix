@@ -14,7 +14,7 @@ in
   # `<nixpkgs>` to the exact revision in flake.lock so that `nix shell
   # nixpkgs#foo`, `nix-shell -p foo`, and the system all agree.
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.settings.nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
   nix.channel.enable = false;
 
   # Old generations accumulate in two places, and each needs its own limit.
