@@ -1,5 +1,5 @@
 # nokron -- AMD desktop tower running NixOS.
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -37,6 +37,14 @@
       };
     })
   ];
+
+  # Steam's web helper is Chromium too, and left alone it renders on the iGPU,
+  # then copies every frame across to the 9070 XT for display (~20% of the
+  # iGPU's time while a game was running). DRI_PRIME points Mesa at the 9070
+  # XT instead, and games launched from Steam inherit it.
+  programs.steam.package = pkgs.steam.override {
+    extraEnv.DRI_PRIME = "pci-0000_07_00_0";
+  };
 
   # The 9070 XT's display engine has hung here ("flip_done timed out"), which
   # takes the TTYs down with it since switching VTs needs a modeset on the same
