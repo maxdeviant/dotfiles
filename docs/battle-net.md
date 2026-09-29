@@ -24,7 +24,7 @@ The bottle lives in `~/.local/share/bottles/bottles/Battle.net`. That directory 
 
 ## World of Warcraft
 
-- Set `/console rawMouseEnable 1`. Along with Fullscreen Capture, this is what lets the right-click camera spin continuously.
+- Run `/console rawMouseEnable 1` in-game. Along with Fullscreen Capture, this is what lets the right-click camera spin continuously.
 
 ## Why the close setting matters
 
