@@ -63,6 +63,17 @@ in
       cursor-size = config.home.pointerCursor.size;
     };
 
+    # System Settings -> Mouse and Touchpad -> Mouse -> Pointer Size and Speed.
+    #
+    # Cinnamon's settings daemon pushes these onto the libinput device at
+    # login, overriding services.libinput.mouse.*, so they have to be set here.
+    # "Device Default" already resolves to adaptive for a mouse; it's pinned so
+    # it doesn't depend on the device.
+    dconf.settings."org/cinnamon/desktop/peripherals/mouse" = {
+      speed = -0.25;
+      accel-profile = "adaptive";
+    };
+
     # System Settings -> General -> Disable compositing for full-screen windows.
     #
     # Off by default on X11, so Muffin copies every frame of a fullscreen game
