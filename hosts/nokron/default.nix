@@ -52,6 +52,28 @@
   # so Alt+SysRq+REISUB can still reboot cleanly.
   boot.kernel.sysctl."kernel.sysrq" = 1;
 
+  # PipeWire comes from the Cinnamon defaults, but without RTKit its audio
+  # thread never gets realtime priority, so under load it misses deadlines and
+  # the output crackles (hundreds of xruns per stream in pw-top).
+  security.rtkit.enable = true;
+
+  # With RTKit available, PipeWire's client library (used in-process by the
+  # ALSA plugin, e.g. RuneLite's Java audio) reads RTKit's RTTimeUSecMax as 0
+  # and sets RLIMIT_RTTIME to 0, so the kernel SIGKILLs the whole app the
+  # moment its RT audio thread is caught running. Keep RT on the daemons, where
+  # it matters, and skip it in clients, which is how they ran before RTKit.
+  services.pipewire.extraConfig.client."10-no-rt" = {
+    "context.properties"."module.rt" = false;
+  };
+
+  # The graph runs at the smallest quantum any client asks for, and games under
+  # Wine ask for 256 (~5ms). That's too tight here: those streams and RuneLite
+  # racked up hundreds of xruns, and every xrun crackles on the shared sink, so
+  # Chrome and Spotify crackled too. 1024 (~21ms) left the error counts flat.
+  services.pipewire.extraConfig.pipewire."10-min-quantum" = {
+    "context.properties"."default.clock.min-quantum" = 1024;
+  };
+
   home-manager.users.${config.maxdeviant.identity.username}.imports = [ ./home.nix ];
 
   # The first version of NixOS installed on this machine. This is not a "which

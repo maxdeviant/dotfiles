@@ -43,6 +43,13 @@ appimageTools.wrapType2 {
     fi
   '';
 
+  # The FHS sandbox only carries over a fixed list of host /etc entries, and
+  # /etc/pipewire isn't one of them. RuneLite's audio goes through PipeWire's
+  # ALSA plugin in-process, so without this it misses the client.conf.d drop-in
+  # that turns off client-side realtime (see hosts/nokron/default.nix) and gets
+  # SIGKILLed.
+  extraBwrapArgs = [ "--ro-bind-try /etc/pipewire /etc/pipewire" ];
+
   # The desktop entry also registers the launcher as the `rshub://` handler,
   # which the login flow redirects back through.
   extraInstallCommands = ''
