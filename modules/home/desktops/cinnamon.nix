@@ -74,6 +74,10 @@ in
       accel-profile = "adaptive";
     };
 
+    # System Settings -> Windows -> Behavior -> Special key to move and resize
+    # windows.
+    dconf.settings."org/cinnamon/desktop/wm/preferences".mouse-button-modifier = "<Super>";
+
     # System Settings -> General -> Disable compositing for full-screen windows.
     #
     # Off by default on X11, so Muffin copies every frame of a fullscreen game
