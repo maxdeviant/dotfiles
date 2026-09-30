@@ -44,6 +44,25 @@ in
     # in hosts/nokron/default.nix is chosen with this factor applied.
     dconf.settings."org/cinnamon/desktop/interface".text-scaling-factor = 1.5;
 
+    # System Settings -> Themes -> Mouse Pointer.
+    #
+    # Cinnamon only hands its cursor theme to GTK apps. Everything else on X11
+    # (Alacritty, RuneLite, and other Java apps) looks at Xcursor.* in the X
+    # resources or XCURSOR_* in the environment, and falls back to the tiny
+    # core X cursor when neither is set. This sets both, and Cinnamon's own
+    # setting alongside, so they can't drift apart. The theme is the Cinnamon
+    # default. It takes a logout to reach apps that are already running.
+    home.pointerCursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
+      x11.enable = true;
+    };
+    dconf.settings."org/cinnamon/desktop/interface" = {
+      cursor-theme = config.home.pointerCursor.name;
+      cursor-size = config.home.pointerCursor.size;
+    };
+
     # System Settings -> General -> Disable compositing for full-screen windows.
     #
     # Off by default on X11, so Muffin copies every frame of a fullscreen game
