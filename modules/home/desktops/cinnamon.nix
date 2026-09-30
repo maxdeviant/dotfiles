@@ -53,6 +53,7 @@ in
     # setting alongside, so they can't drift apart. The theme is the Cinnamon
     # default. It takes a logout to reach apps that are already running.
     home.pointerCursor = {
+      enable = true;
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 24;
