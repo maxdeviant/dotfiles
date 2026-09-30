@@ -28,6 +28,21 @@ in
 appimageTools.wrapType2 {
   inherit pname version src;
 
+  # Inside the FHS sandbox, /etc/localtime is a link to /.host-etc/localtime.
+  # Java names the time zone after the `zoneinfo/` part of that link's target,
+  # and when there isn't one it falls back to GMT, so RuneLite's timers
+  # (farming patches, birdhouses, and so on) all show UTC. Following the link
+  # all the way down does end in `zoneinfo/<zone>`, so hand Java that as TZ.
+  profile = ''
+    if [ -z "''${TZ:-}" ]; then
+      zone=$(readlink -f /etc/localtime)
+      case "$zone" in
+        */zoneinfo/*) export TZ="''${zone#*/zoneinfo/}" ;;
+      esac
+      unset zone
+    fi
+  '';
+
   # The desktop entry also registers the launcher as the `rshub://` handler,
   # which the login flow redirects back through.
   extraInstallCommands = ''
