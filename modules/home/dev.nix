@@ -25,5 +25,14 @@ in
       # Python
       python3
     ];
+
+    # Loads a project's environment (e.g., its `nix develop` shell) on `cd`.
+    # Hooks into fish and bash automatically, since both are enabled in
+    # modules/home/shell.nix. nix-direnv caches the flake shell and keeps it
+    # from being garbage collected.
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
 }
