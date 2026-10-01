@@ -126,6 +126,11 @@
   "tabs": {
     "file_icons": true
   },
+  "terminal": {
+    "shell": {
+      "program": "fish"
+    }
+  },
   "theme": "Melange Dark",
   "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 16,
