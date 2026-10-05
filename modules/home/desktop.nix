@@ -11,6 +11,7 @@ in
       google-chrome
       discord
       spotify
+      obsidian
 
       feh
       maim
