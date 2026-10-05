@@ -11,6 +11,8 @@ in
 {
   home.packages = with pkgs; [
     amdgpu_top
+    aseprite
+    ldtk
   ];
 
   # btop only reads AMD GPUs through rocm-smi, which nixpkgs leaves out unless
