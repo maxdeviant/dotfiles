@@ -159,6 +159,21 @@ in
         "--arg format ${lib.escapeShellArg clockFormat}"
         ''."use-custom-format".value = true | ."custom-format".value = $format'');
 
+    # Refresh the app menu after a switch, so new apps show up without
+    # restarting Cinnamon (which halves the width of any tiled windows).
+    #
+    # Cinnamon watches each `share/applications` in XDG_DATA_DIRS, but resolves
+    # the symlinks first, so it ends up watching the old generation's store
+    # paths, which never change. Adding or removing a `.menu` file in a merge
+    # directory makes it reload the menu and resolve those paths afresh; a
+    # `.desktop` file isn't enough, since that only rereads the one directory.
+    home.activation.cinnamonReloadMenu = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      merged="${config.xdg.configHome}/menus/applications-merged"
+      run mkdir -p "$merged"
+      run touch "$merged/home-manager-reload.menu"
+      run rm "$merged/home-manager-reload.menu"
+    '';
+
     # Panel sound -> Configure -> Show menu.
     #
     # Defaults to Super+Shift+S, which collides with the screenshot binding
