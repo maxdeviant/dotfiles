@@ -16,6 +16,10 @@ in
       feh
       maim
       xclip
+
+      # GUI for gpu-screen-recorder; the Super+Shift+R toggle is in
+      # modules/home/desktops/cinnamon.nix.
+      gpu-screen-recorder-gtk
     ];
   };
 }

@@ -14,6 +14,12 @@ in
 
     services.xserver.displayManager.lightdm.enable = true;
 
+    # Screen recording. This installs the setcap wrapper for gsr-kms-server,
+    # without which gpu-screen-recorder asks for a password via pkexec every
+    # time it captures the screen. The user half -- the toggle script and its
+    # keybinding -- is in modules/home/desktops/cinnamon.nix.
+    programs.gpu-screen-recorder.enable = true;
+
     assertions = [
       {
         assertion = cfg.desktopEnvironment != null;

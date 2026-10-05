@@ -14,6 +14,35 @@ let
   playerctl = lib.getExe pkgs.playerctl;
   alacritty = lib.getExe config.programs.alacritty.package;
 
+  # Starts a recording if none is running, and stops it otherwise. slop picks
+  # what to record: click a window, or drag out a region. The invocation that
+  # started the recording stays alive until it's stopped, so it's the one that
+  # reports where the file went.
+  recordToggle = lib.getExe (pkgs.writeShellApplication {
+    name = "record-toggle";
+    runtimeInputs = with pkgs; [ gpu-screen-recorder slop libnotify procps ];
+    text = ''
+      if pkill -INT -x gpu-screen-recorder; then
+        exit 0
+      fi
+
+      # slop exits non-zero when the selection is cancelled with Escape.
+      geometry=$(slop -f "%wx%h+%x+%y") || exit 0
+
+      dir="$HOME/Videos/Recordings"
+      mkdir -p "$dir"
+      file="$dir/$(date +%Y-%m-%d_%H-%M-%S).mp4"
+
+      notify-send -t 1500 -u low "Recording" "Super+Shift+R to stop"
+      if gpu-screen-recorder -w region -region "$geometry" -c mp4 -f 60 \
+          -a default_output -o "$file"; then
+        notify-send -t 3000 -u low "Recording saved" "$file"
+      else
+        notify-send -u critical "Recording failed" "gpu-screen-recorder exited with an error"
+      fi
+    '';
+  });
+
   # Applet settings aren't in dconf: each applet instance has a JSON file that
   # Cinnamon owns, carrying the settings schema alongside the values and
   # rewriting it when the applet is upgraded. A read-only store symlink would
@@ -128,6 +157,7 @@ in
       "spotify-play-pause"
       "spotify-next"
       "spotify-previous"
+      "record-toggle"
     ];
     # Launched from a keybinding, the new window carries the keypress's
     # timestamp, so the "smart" focus-new-windows policy lets it take focus.
@@ -151,6 +181,12 @@ in
       name = "Spotify: Previous";
       command = "${playerctl} --player=spotify previous";
       binding = [ "XF86AudioPrev" ];
+    };
+    # Pairs with Super+Shift+S for area screenshots.
+    dconf.settings."org/cinnamon/desktop/keybindings/custom-keybindings/record-toggle" = {
+      name = "Toggle screen recording";
+      command = recordToggle;
+      binding = [ "<Super><Shift>r" ];
     };
 
     # Panel clock -> Configure -> Use a custom date format.
