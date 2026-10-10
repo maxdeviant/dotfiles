@@ -12,5 +12,10 @@ in
 
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
+
+    # Wine/Proton (GE-Proton 10+) uses /dev/ntsync for Windows synchronization
+    # primitives when it exists, instead of emulating them with fsync/esync.
+    # The kernel ships the driver as a module but nothing autoloads it.
+    boot.kernelModules = [ "ntsync" ];
   };
 }
