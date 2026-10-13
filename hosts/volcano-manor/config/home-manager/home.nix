@@ -44,6 +44,8 @@
 
       source "$HOME/.cargo/env.fish"
 
+      set -gx PATH $PATH "$HOME/.local/bin"
+
       set -gx VOLTA_HOME "$HOME/.volta"
       set -gx PATH $PATH "$VOLTA_HOME/bin"
 
