@@ -116,6 +116,18 @@
           white = "#bebec1";
         };
       };
+
+      keyboard.bindings = [
+        # Send ESC+CR so that programs reading the terminal can tell
+        # Shift+Return apart from a bare Return.
+        {
+          key = "Return";
+          mods = "Shift";
+          # Nix strings have no \u escape -- "\u001B" would collapse to the
+          # literal text "u001B" -- so the escape character comes from JSON.
+          chars = builtins.fromJSON ''"\u001B\r"'';
+        }
+      ];
     };
   };
 
