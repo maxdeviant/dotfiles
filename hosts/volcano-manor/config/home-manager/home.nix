@@ -191,6 +191,7 @@
     _1password-cli
     sqlx-cli
     watchexec
+    gh
 
     # Zed
     cmake
