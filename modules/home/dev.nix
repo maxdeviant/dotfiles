@@ -9,6 +9,7 @@ in
       bat
       cloc
       fastfetch
+      gh
       graphviz
       jq
       just
