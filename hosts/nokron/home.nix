@@ -1,6 +1,6 @@
 # Home configuration specific to nokron. Anything portable belongs in
 # modules/home/ instead, so the other hosts can pick it up later.
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   # mkOutOfStoreSymlink needs the path to the live checkout: a relative path
@@ -38,5 +38,13 @@ in
   # Also linked to the checkout, since Claude Code writes to it (e.g., `/model`
   # and `/config`). The `PostToolUse` hook records XP for Claude Code's edits
   # through the `code-stats-ls` from modules/home/zed.nix.
-  home.file.".claude/settings.json".source = link "hosts/nokron/config/claude/settings.json";
+  #
+  # Linked directly rather than through `home.file`: Claude Code only follows
+  # one symlink before writing its temp file alongside the target, and
+  # `mkOutOfStoreSymlink` always goes through the read-only store first.
+  home.activation.claudeSettings = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    run mkdir -p "${config.home.homeDirectory}/.claude"
+    run ln -sfn "${dotfiles}/hosts/nokron/config/claude/settings.json" \
+      "${config.home.homeDirectory}/.claude/settings.json"
+  '';
 }

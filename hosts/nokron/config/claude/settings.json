@@ -1,12 +1,22 @@
 {
-  "theme": "dark",
   "model": "opus",
   "hooks": {
     "PostToolUse": [
       {
         "matcher": "Edit|Write|MultiEdit",
-        "hooks": [{ "type": "command", "command": "code-stats-ls hook" }]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "code-stats-ls hook"
+          }
+        ]
       }
     ]
+  },
+  "theme": "dark",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "autoCompactWindow": 400000
+    }
   }
 }
