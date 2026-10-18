@@ -190,6 +190,16 @@
         name = "Marshall Bowers";
         email = "git@maxdeviant.com";
       };
+      aliases = {
+        tug = [
+          "bookmark"
+          "move"
+          "--from"
+          "heads(::@- & bookmarks())"
+          "--to"
+          "@-"
+        ];
+      };
     };
   };
 
