@@ -1,12 +1,26 @@
 # nokron -- AMD desktop tower running NixOS.
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.yn-engineer-runner.nixosModules.default
   ];
 
   networking.hostName = "nokron";
+
+  # One sandboxed runner for the engineer agent, which mostly works while I'm
+  # away.
+  services.yn-engineer-runner = {
+    enable = true;
+    tokenFile = "/var/lib/yn-engineer/github-token";
+    externalInterface = "eno1";
+  };
 
   # Everything downstream of these toggles fans out to both halves of the
   # configuration: modules/nixos/<role>.nix for the system side, and

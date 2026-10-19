@@ -18,6 +18,12 @@
       url = "github:sadjow/claude-code-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Sandboxed GitHub Actions runners for Yunnan Softworks' engineer agent.
+    yn-engineer-runner = {
+      url = "git+ssh://git@github.com/yunnansoftworks/ops?dir=infrastructure/engineer-runner";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
