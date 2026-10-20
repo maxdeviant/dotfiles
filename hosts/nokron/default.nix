@@ -22,6 +22,12 @@
     externalInterface = "eno1";
   };
 
+  # openFirewall lets peers connect directly instead of through a DERP relay.
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # Everything downstream of these toggles fans out to both halves of the
   # configuration: modules/nixos/<role>.nix for the system side, and
   # modules/home/<role>.nix for the user side.
