@@ -44,10 +44,32 @@
     "microvm": {
       "inputs": {
         "nixpkgs": [
-          "yn-engineer-runner",
+          "terrace",
           "nixpkgs"
         ],
         "spectrum": "spectrum"
+      },
+      "locked": {
+        "lastModified": 1791551030,
+        "narHash": "sha256-jTx3O3MKqPjv+cDfBFQ5zlKECBEwzF91scC+mSumZyE=",
+        "owner": "microvm-nix",
+        "repo": "microvm.nix",
+        "rev": "f13928fe9900e91709d7ce581eefa47eaafa79e1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "microvm-nix",
+        "repo": "microvm.nix",
+        "type": "github"
+      }
+    },
+    "microvm_2": {
+      "inputs": {
+        "nixpkgs": [
+          "yn-engineer-runner",
+          "nixpkgs"
+        ],
+        "spectrum": "spectrum_2"
       },
       "locked": {
         "lastModified": 1791551030,
@@ -84,10 +106,48 @@
         "claude-code": "claude-code",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "terrace": "terrace",
         "yn-engineer-runner": "yn-engineer-runner"
       }
     },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "terrace",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792480937,
+        "narHash": "sha256-arni7i+yH5ZnkvAN9UotvhMml5+fZyXcMHpiOvI3WFY=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "5424e1e6dda30b0626935d2a03a6526db4858d60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
     "spectrum": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786032750,
+        "narHash": "sha256-+Ba/kIn5BjvV7PN8bWOo7RoqgTY/Yv2M7qeMf3wS2Ag=",
+        "ref": "refs/heads/main",
+        "rev": "77d2389874bb092b8dbf05ecc5b1030372e80e98",
+        "revCount": 1417,
+        "type": "git",
+        "url": "https://spectrum-os.org/git/spectrum"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://spectrum-os.org/git/spectrum"
+      }
+    },
+    "spectrum_2": {
       "flake": false,
       "locked": {
         "lastModified": 1786032750,
@@ -118,9 +178,31 @@
         "type": "github"
       }
     },
-    "yn-engineer-runner": {
+    "terrace": {
       "inputs": {
         "microvm": "microvm",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1792553546,
+        "narHash": "sha256-lt+cp+XFJ6EuetDQD5t1/Nq+HmV5ao3yb+L4PCkZDgw=",
+        "ref": "refs/heads/main",
+        "rev": "dd8f5c831217b2133b2d6af04ca49b9309f3d655",
+        "revCount": 25,
+        "type": "git",
+        "url": "ssh://git@github.com/yunnansoftworks/terrace"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/yunnansoftworks/terrace"
+      }
+    },
+    "yn-engineer-runner": {
+      "inputs": {
+        "microvm": "microvm_2",
         "nixpkgs": [
           "nixpkgs"
         ]

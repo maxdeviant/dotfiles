@@ -10,6 +10,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.yn-engineer-runner.nixosModules.default
+    inputs.terrace.nixosModules.host
   ];
 
   networking.hostName = "nokron";
@@ -26,6 +27,24 @@
   services.tailscale = {
     enable = true;
     openFirewall = true;
+  };
+
+  # The Terrace daemon, reachable only over the tailnet. Opened per port rather
+  # than trusting tailscale0 outright, so sprouts on other hosts can't reach
+  # everything else listening here.
+  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 7171 ];
+
+  # The Terrace daemon is a user service (see home.nix), so that sprouts run
+  # with my agent logins and git credentials. Lingering starts it at boot
+  # rather than at login, and keeps it running after logging out.
+  users.users.${config.maxdeviant.identity.username}.linger = true;
+
+  # Network taps for Terrace's microVM sprouts, which give them the internet
+  # and nothing else on this machine or the tailnet.
+  services.terrace-host = {
+    enable = true;
+    user = config.maxdeviant.identity.username;
+    externalInterface = "eno1";
   };
 
   # Everything downstream of these toggles fans out to both halves of the

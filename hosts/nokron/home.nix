@@ -1,6 +1,6 @@
 # Home configuration specific to nokron. Anything portable belongs in
 # modules/home/ instead, so the other hosts can pick it up later.
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 let
   # mkOutOfStoreSymlink needs the path to the live checkout: a relative path
@@ -9,6 +9,17 @@ let
   link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
 in
 {
+  imports = [ inputs.terrace.homeManagerModules.default ];
+
+  # Listens on nokron's tailnet IP, which Tailscale keeps for as long as the
+  # machine stays in the tailnet. Templates come from the live checkout, so
+  # changes to them are picked up by the next sprout without a rebuild.
+  services.terraced = {
+    enable = true;
+    listen = "100.76.198.29:7171";
+    templates = "${config.home.homeDirectory}/projects/terrace";
+  };
+
   home.packages = with pkgs; [
     amdgpu_top
     aseprite

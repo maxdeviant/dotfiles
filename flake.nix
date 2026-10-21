@@ -24,6 +24,13 @@
       url = "git+ssh://git@github.com/yunnansoftworks/ops?dir=infrastructure/engineer-runner";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Runs coding agents in their own environments, on this machine or others
+    # on the tailnet.
+    terrace = {
+      url = "git+ssh://git@github.com/yunnansoftworks/terrace";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
