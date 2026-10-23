@@ -209,6 +209,7 @@ in
     ripgrep
     bat
     cloc
+    gh
     tree
     graphviz
     htop
