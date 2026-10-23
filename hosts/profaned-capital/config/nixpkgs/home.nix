@@ -1,8 +1,29 @@
 { config, pkgs, ... }:
 
+let
+  # This host's Home Manager isn't a flake, so Terrace is fetched with
+  # getFlake instead, at the revision the dotfiles flake has locked. That keeps
+  # it in step with nokron: `nix flake update terrace` moves both. The path is
+  # absolute because this file is reached through a symlink.
+  terrace =
+    let
+      lock = builtins.fromJSON (builtins.readFile /Users/maxdeviant/dotfiles/flake.lock);
+    in
+    builtins.getFlake "git+ssh://git@github.com/yunnansoftworks/terrace?rev=${lock.nodes.terrace.locked.rev}";
+in
 {
+  imports = [ terrace.homeManagerModules.default ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Listens only on localhost, where the Terrace client on this machine reaches
+  # it. Templates come from the live checkout, so changes to them are picked up
+  # by the next sprout without a rebuild.
+  services.terraced = {
+    enable = true;
+    templates = "${config.home.homeDirectory}/projects/terrace";
+  };
 
   # Configure nixpkgs
   nixpkgs.overlays = [

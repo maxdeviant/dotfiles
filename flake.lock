@@ -187,11 +187,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1792553546,
-        "narHash": "sha256-lt+cp+XFJ6EuetDQD5t1/Nq+HmV5ao3yb+L4PCkZDgw=",
+        "lastModified": 1792724372,
+        "narHash": "sha256-uXdf9/JtU+5p4fgI2ss1Iij3L1P7cj/PVY/lCxLD7es=",
         "ref": "refs/heads/main",
-        "rev": "dd8f5c831217b2133b2d6af04ca49b9309f3d655",
-        "revCount": 25,
+        "rev": "b94b2c62c0ecdd8ac3a8bcd625044d602e3d8af0",
+        "revCount": 63,
         "type": "git",
         "url": "ssh://git@github.com/yunnansoftworks/terrace"
       },
