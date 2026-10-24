@@ -47,6 +47,13 @@
     externalInterface = "eno1";
   };
 
+  # Pin GitHub's host key rather than trusting it on first use, for anything
+  # that talks to GitHub over SSH. Goes in the system-wide known_hosts, so it
+  # covers every user, root included.
+  # https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
+  programs.ssh.knownHosts."github.com".publicKey =
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+
   # Everything downstream of these toggles fans out to both halves of the
   # configuration: modules/nixos/<role>.nix for the system side, and
   # modules/home/<role>.nix for the user side.
