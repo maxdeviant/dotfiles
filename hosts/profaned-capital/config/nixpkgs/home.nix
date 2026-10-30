@@ -223,6 +223,7 @@ in
     htop
     jq
     just
+    python3
 
     doctl
     kubectl
