@@ -176,6 +176,14 @@ in
     };
   };
 
+  # Loads a project's environment (e.g., its `nix develop` shell) on `cd`.
+  # Hooks into fish automatically, since it's enabled above. nix-direnv caches
+  # the flake shell and keeps it from being garbage collected.
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "Marshall Bowers";
