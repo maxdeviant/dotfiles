@@ -226,5 +226,10 @@ in
 
     doctl
     kubectl
+
+    # For the `PostToolUse` hook in config/claude/settings.json, which records
+    # XP for Claude Code's edits. The path is absolute because this file is
+    # reached through a symlink.
+    (callPackage /Users/maxdeviant/dotfiles/pkgs/code-stats-ls.nix { })
   ];
 }

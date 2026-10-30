@@ -1,5 +1,8 @@
 #!/bin/sh
 
+mkdir -p ~/.claude
+ln -i -s $(pwd)/config/claude/settings.json ~/.claude/settings.json
+
 mkdir -p ~/.config/nix
 ln -i -s $(pwd)/config/nix/nix.conf ~/.config/nix/nix.conf
 

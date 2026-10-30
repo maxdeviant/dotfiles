@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "code-stats-ls hook"
+          }
+        ]
+      }
+    ]
+  },
+  "theme": "dark",
+  "agentPushNotifEnabled": true
+}
