@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     inputs.yn-engineer-runner.nixosModules.default
     inputs.terrace.nixosModules.host
+    inputs.rex.nixosModules.default
   ];
 
   networking.hostName = "nokron";
@@ -45,6 +46,18 @@
     enable = true;
     user = config.maxdeviant.identity.username;
     externalInterface = "eno1";
+  };
+
+  # The Rex login server, so that remote sessions run as my own account, with my
+  # files and credentials. Reachable at https://nokron.tail58473.ts.net:7297.
+  # It has no passwords or keys: being signed in to this Tailscale login, on any
+  # untagged device, is what grants access.
+  services.rex.loginServer = {
+    enable = true;
+    accounts.${config.maxdeviant.identity.username}.principals = [
+      "tailscale:elliott.codes@gmail.com"
+    ];
+    tailscaleServe.enable = true;
   };
 
   # Pin GitHub's host key rather than trusting it on first use, for anything

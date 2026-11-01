@@ -19,6 +19,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Rex has no stable releases yet, so this tracks previews. Bump it on its own
+    # with `nix flake update rex`.
+    rex = {
+      url = "https://pkgs.superlogical.com/rex/nix/preview.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Sandboxed GitHub Actions runners for Yunnan Softworks' engineer agent.
     yn-engineer-runner = {
       url = "git+ssh://git@github.com/yunnansoftworks/ops?dir=infrastructure/engineer-runner";
