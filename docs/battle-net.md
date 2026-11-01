@@ -26,6 +26,10 @@ The bottle lives in `~/.local/share/bottles/bottles/Battle.net`. That directory 
 
 - Run `/console rawMouseEnable 1` in-game. Along with Fullscreen Capture, this is what lets the right-click camera spin continuously.
 
+### Addons
+
+Addons are managed with WowUp-CF, packaged in [`pkgs/wowup-cf.nix`](../pkgs/wowup-cf.nix). It can't find a Bottles install on its own, since it only looks for Lutris, so add the game by hand under **Options → Clients**, selecting `Wow.exe` from the client's folder in `~/.local/share/bottles/bottles/Battle.net/drive_c/Program Files (x86)/World of Warcraft/`.
+
 ## Why the close setting matters
 
 By default, closing Battle.net minimizes it to the system tray. Under Wine the tray icon frequently doesn't show up, so the launcher looks like it quit while it's actually still running in the background. Setting it to exit completely avoids the phantom process.

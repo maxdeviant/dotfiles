@@ -34,6 +34,7 @@ in
       lutris
       runelite
       wine
+      (callPackage ../../pkgs/wowup-cf.nix { })
     ];
 
     # The Jagex Launcher downloads RuneLite's generic Linux AppImage to this
